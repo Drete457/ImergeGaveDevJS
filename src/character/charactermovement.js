@@ -2,14 +2,16 @@ class Character {
 
     constructor(image) {
         this.image = image;
-        this.x = 0;
-        this.y = 0;
-        this.characterWidth = width / 9;
+        this.sizeX = 58;
+        this.sizeY = 65;
+        this.characterWidth = width / 9 ;
         this.characterHeigth = height / 6;
-        this.sizeX = 220;
-        this.sizeY = 270;
-        this.sizeXMax = this.sizeX * 3;
-        this.sizeYMax = this.sizeY * 3;
+       // this.characterWidth = width / 9;
+        //this.characterHeigth = height / 6;
+        this.x = this.sizeX;
+        this.y = this.sizeY * 11;
+        this.sizeXMax = this.sizeX;
+        this.sizeYMax = this.sizeY * 8;
     }
 
     drawCharacter() {
@@ -17,12 +19,13 @@ class Character {
             this.x,
             this.y,
             this.sizeX, this.sizeY);
-        this.animation();
+         this.animation();
     }
 
     animation() {
-        this.x < this.sizeXMax ? this.x += this.sizeX : this.x = 0; 
-        this.x === 0 ? this.y += this.sizeY : null;
-        this.y > this.sizeYMax ? this.y = 0 : null;
+        console.log(this.x)
+        this.x < this.sizeYMax-this.sizeX ? this.x += this.sizeX+6 : this.x = 0;
+    
     }
 }
+

@@ -1,18 +1,26 @@
+//Scenario
 let imageScenery;
-let imageCharacter;
 let scenario;
+
+//Caracter
+let imageCharacter;
 let character;
+
+//Sound
 let gameSound;
 
-function preload(){
-  imageScenery = loadImage('images/scenery/floresta.png');
-  imageCharacter = loadImage('images/maincaracter/correndo.png');
-  gameSound = loadSound('sound/trilha_jogo.mp3');
+//GameSpeed
+let speed = 3
+
+function preload() {
+  imageScenery = loadImage('images/scenery/dungeon.png');
+  imageCharacter = loadImage('images/maincaracter/warior.png');
+  gameSound = loadSound('sound/begin.ogg');
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  scenario = new Scenario(imageScenery, 3);
+  scenario = new Scenario(imageScenery, speed);
   character = new Character(imageCharacter);
   gameSound.loop();
   frameRate(30);
