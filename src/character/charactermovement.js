@@ -7,7 +7,9 @@ class Character {
         this.characterWidth = width / 9;
         this.characterHeigth = height / 6;
         this.sizeX = 220;
-        this.sizeY = 270;  
+        this.sizeY = 270;
+        this.sizeXMax = this.sizeX * 3;
+        this.sizeYMax = this.sizeY * 3;
     }
 
     drawCharacter() {
@@ -19,8 +21,8 @@ class Character {
     }
 
     animation() {
-        this.x < 660 ? this.x += this.sizeX : this.x = 0; 
+        this.x < this.sizeXMax ? this.x += this.sizeX : this.x = 0; 
         this.x === 0 ? this.y += this.sizeY : null;
-        this.y > 810 ? this.y = 0 : null;
+        this.y > this.sizeYMax ? this.y = 0 : null;
     }
 }
