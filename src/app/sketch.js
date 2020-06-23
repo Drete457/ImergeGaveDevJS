@@ -61,9 +61,9 @@ let sizeYBb;
 let spritePositionXBb
 let spritePositionYBb
 
-function bubbleInicialization() {
-  inicialPositionXBb = width -100;
-  inicialPositionYBb = height - height / 7;
+function bubbleInicialization(x, y) {
+  inicialPositionXBb = x;
+  inicialPositionYBb = y;
   bubbleWidth = 52;
   bubbleHeigth = 52;
   sizeXBb = 104;
@@ -83,6 +83,10 @@ function preload() {
   imageBubble = loadImage('images/enemy/gotinha.png');
 }
 
+function keyPressed() {
+  key === " " ? character.jump() : null;
+}
+
 function setup() {
   frameRate(30);
   gameSound.loop();
@@ -94,11 +98,16 @@ function setup() {
 
   characterInicialization();
 
-  bubbleInicialization();
+  bubbleInicialization(width -100, height - height / 7);
 }
 
 function draw(){
   animation(scenario);
   animation(character);
   animation(bubble);
+//fazer factory dos personagens e passar como argumento cada um para a colisão
+  if (character.collision(bubble)) {
+    console.log("colidiu");
+    noLoop();
+  }
 }
