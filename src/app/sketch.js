@@ -50,7 +50,7 @@ function keyPressed() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(60);
+  frameRate(40);
   reset();
 }
 
