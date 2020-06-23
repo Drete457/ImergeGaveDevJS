@@ -1,6 +1,6 @@
 class Character extends AnimationDraw{
-  constructor(image, inicialPositionX, inicialPositionY, characterWidth, characterHeigth, sizeX, sizeY, spritePositionX, spritePositionY, numberOfMovements, jumpSound) {
-    super(image, inicialPositionX, inicialPositionY, characterWidth, characterHeigth, sizeX, sizeY, spritePositionX, spritePositionY);
+  constructor(image, inicialPositionX, inicialPositionY, characterWidth, characterHeight, sizeX, sizeY, spritePositionX, spritePositionY, numberOfMovements, jumpSound) {
+    super(image, inicialPositionX, inicialPositionY, characterWidth, characterHeight, sizeX, sizeY, spritePositionX, spritePositionY);
 
     //the full sprite size will be use for the caracter movement
     this.sizeXMax = this.sizeX;
@@ -40,11 +40,11 @@ class Character extends AnimationDraw{
       this.inicialPositionX,
       this.inicialPositionY,
       this.characterWidth * precision,
-      this.characterHeigth * precision,
+      this.characterHeight * precision,
       enemy.inicialPositionX,
       enemy.inicialPositionY,
-      enemy.characterWidth * precision,
-      enemy.characterHeigth * precision
+      enemy.characterWidth,
+      enemy.characterHeight * precision
     );
   }
 }

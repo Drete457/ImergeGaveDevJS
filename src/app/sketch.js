@@ -27,6 +27,11 @@ let bubble;
 //control the animation for all enemy's and main character
 let animation;
 
+//UI of the game
+let imageGameOver;
+let gameOver;
+let font;
+
 function preload() {
   gameSound = loadSound("sound/begin.ogg");
   jumpSound = loadSound("sound/somPulo.mp3");
@@ -34,17 +39,40 @@ function preload() {
   imageBat = loadImage("images/scenery/bath.png");
   imageCharacter = loadImage("images/maincaracter/warior.png");
   imageBubble = loadImage("images/enemy/gotinha.png");
+  imageGameOver = loadImage("images/assets/game-over.png");
+  font = loadFont("images/assets/fonteTelaInicial.otf");
 }
 
 function keyPressed() {
   key === " " ? character.jump() : null;
+  key === "s" ? reset() : null;
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(30);
+  frameRate(60);
+  reset();
+}
+
+function draw() {
+  animation(scenario);
+
+  animation(character);
+
+  bat.map((bat) => animation(bat));
+  bubble.map((bubble) => {
+    animation(bubble);
+    character.collision(bubble) ? animation(gameOver) : null;
+  });
+}
+
+function reset() {
   factory = new Factory();
   animation = new AnimationMovement().animation;
+
+  textFont(font);
+  textSize(40);
+  textAlign(CENTER, CENTER);
 
   gameSound.loop();
 
@@ -54,14 +82,8 @@ function setup() {
   character = factory.character();
 
   bubble = factory.bubble();
-}
 
-function draw() {
-  animation(scenario);
-  bat.map((bat) => animation(bat));
-  animation(character);
-  bubble.map((bubble) => {
-    animation(bubble);
-    character.collision(bubble) ? noLoop() : null;
-  });
+  gameOver = factory.gameOver();
+  
+  loop();
 }

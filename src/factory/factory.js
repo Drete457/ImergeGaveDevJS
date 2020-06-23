@@ -4,37 +4,37 @@ class Factory {
   }
 
   bat() {
-    let numberOfBat = Math.ceil(Math.random() * 3);
+    let numberOfBat = Math.ceil(Math.random() * 5);
     let list = [];
     for (let i = 0; i <= numberOfBat; i++) {
-      //bubble position and image on the screen
-      let inicialPositionXBb = Math.floor(
+      //bat position and image on the screen
+      let inicialPositionXBt = Math.floor(
         Math.random() * (width - width / 1.3) + width / 1.3,
       );
-      let inicialPositionYBb = Math.floor(
-        Math.random() * (height - height / 1.3) + height / 1.3,
+      let inicialPositionYBt = Math.floor(
+        Math.random() * (height / 5 - height / 11) + height / 11,
       );
-      //size of the bubble on the screen
-      let bubbleWidth = 52;
-      let bubbleHeigth = 52;
-      //size of the bubble in the file
-      let sizeXBb = 104;
-      let sizeYBb = 104;
-      //reference white sprite use of the bubble
-      let spritePositionXBb = 0;
-      let spritePositionYBb = 0;
+      //size of the bat on the screen
+      let batWidth = 60;
+      let batHeigth = 45;
+      //size of the bat in the file
+      let sizeXBt = 160;
+      let sizeYBt = 120;
+      //reference white sprite use of the bat
+      let spritePositionXBt = 0;
+      let spritePositionYBt = 0;
       let batSpeed = 10;
       list.push(
-        new Bubble(
+        new Bat(
           imageBat,
-          inicialPositionXBb,
-          inicialPositionYBb,
-          bubbleWidth,
-          bubbleHeigth,
-          sizeXBb,
-          sizeYBb,
-          spritePositionXBb,
-          spritePositionYBb,
+          inicialPositionXBt,
+          inicialPositionYBt,
+          batWidth,
+          batHeigth,
+          sizeXBt,
+          sizeYBt,
+          spritePositionXBt,
+          spritePositionYBt,
           batSpeed,
         ),
       );
@@ -77,7 +77,7 @@ class Factory {
     for (let i = 0; i <= numberOfBubble; i++) {
       //bubble position and image on the screen
       let inicialPositionXBb = Math.floor(
-        Math.random() * (width - width / 1.3) + width / 1.3,
+        Math.random() * (width + width / 1.3) + width / 1.3,
       );
       let inicialPositionYBb = Math.floor(
         Math.random() * (height - height / 1.3) + height / 1.3,
@@ -108,5 +108,9 @@ class Factory {
       );
     }
     return list;
+  }
+
+  gameOver() {
+    return new GameOver(imageGameOver);
   }
 }

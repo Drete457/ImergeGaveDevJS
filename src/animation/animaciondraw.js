@@ -1,5 +1,5 @@
 class AnimationDraw {
-    constructor(image, inicialPositionX, inicialPositionY, characterWidth, characterHeigth, sizeX, sizeY, spritePositionX, spritePositionY) {
+    constructor(image, inicialPositionX, inicialPositionY, characterWidth, characterHeight, sizeX, sizeY, spritePositionX, spritePositionY) {
       //character position and image on the screen
       this.image = image;
       this.inicialPositionX = inicialPositionX;
@@ -7,7 +7,7 @@ class AnimationDraw {
   
       //size of the character on the screen
       this.characterWidth = characterWidth;
-      this.characterHeigth = characterHeigth;
+      this.characterHeight = characterHeight;
   
       //size of the character in the file
       this.sizeX = sizeX;
@@ -24,7 +24,7 @@ class AnimationDraw {
         this.inicialPositionX,
         this.inicialPositionY, //1º x,y -> position on the screen
         this.characterWidth,
-        this.characterHeigth, //2º x,y -> size in the screen
+        this.characterHeight, //2º x,y -> size in the screen
         this.spritePositionX,
         this.spritePositionY, //3º x,y -> reference to the image
         this.sizeX,
