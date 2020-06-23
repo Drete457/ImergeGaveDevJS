@@ -6,12 +6,12 @@ class Scenario {
     this.x2 = width;
   }
 
-  drawBackGround() {
+  draw() {
     image(this.image, this.x1, 0, width, height);
     image(this.image, this.x2, 0, width, height);
   }
 
-  move() {
+  animation() {
     this.x1 = this.x1 - this.speed;
     this.x2 = this.x2 - this.speed;
 
