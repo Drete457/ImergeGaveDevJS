@@ -9,6 +9,7 @@ class Character extends AnimationDraw{
     this.inicialY = inicialPositionY;
     this.gravity = 9.807;
     this.jumpSpeed = 0;
+    this.numberOfJumps = 2;
     this.humanStrength = 3.73;
 
     this.jumpSound = jumpSound
@@ -21,14 +22,16 @@ class Character extends AnimationDraw{
   }
 
   jump() {
-    this.jumpSpeed = -this.gravity * this.humanStrength;
     this.jumpSound.play();
+    this.numberOfJumps > 0 ? this.jumpSpeed = -this.gravity * this.humanStrength : null;
+    this.numberOfJumps--;
   }
 
   applyGravity() {
     this.inicialPositionY += this.jumpSpeed;
     this.jumpSpeed += this.gravity*0.4; 
     this.inicialPositionY > this.inicialY ? this.inicialPositionY = this.inicialY : null;
+    this.inicialPositionY === this.inicialY ? this.numberOfJumps = 2 : null; 
   }
 
   collision(enemy) {

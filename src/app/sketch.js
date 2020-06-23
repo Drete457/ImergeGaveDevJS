@@ -6,9 +6,12 @@ let jumpSound;
 let imageScenery;
 let scenario;
 
-//GameSpeed
-let speed = 3
+//bat
+let imageBat;
+let bat;
 
+//GameSpeed
+let speed = 3;
 
 //factory
 let factory;
@@ -16,47 +19,21 @@ let factory;
 //Caracter
 let imageCharacter;
 let character;
- 
+
 //Enemy Bubble
 let imageBubble;
 let bubble;
-/*//bubble position and image on the screen
-let inicialPositionXBb;
-let inicialPositionYBb;
 
-//size of the bubble on the screen
-let bubbleWidth;
-let bubbleHeigth;
-
-//size of the bubble in the file
-let sizeXBb;
-let sizeYBb;
-
-//reference white sprite use of the bubble
-let spritePositionXBb
-let spritePositionYBb
-
-function bubbleInicialization(x, y) {
-  inicialPositionXBb = x;
-  inicialPositionYBb = y;
-  bubbleWidth = 52;
-  bubbleHeigth = 52;
-  sizeXBb = 104;
-  sizeYBb = 104;
-  spritePositionXBb = 0;
-  spritePositionYBb = 0;
-  bubbleSpeed = 10;
-  bubble = new Bubble(imageBubble, inicialPositionXBb, inicialPositionYBb, bubbleWidth, bubbleHeigth, sizeXBb, sizeYBb, spritePositionXBb, spritePositionYBb, bubbleSpeed);
-}*/
-
+//control the animation for all enemy's and main character
 let animation;
 
 function preload() {
-  gameSound = loadSound('sound/begin.ogg');
-  jumpSound = loadSound('sound/somPulo.mp3');
-  imageScenery = loadImage('images/scenery/dungeon.png');
-  imageCharacter = loadImage('images/maincaracter/warior.png');
-  imageBubble = loadImage('images/enemy/gotinha.png');
+  gameSound = loadSound("sound/begin.ogg");
+  jumpSound = loadSound("sound/somPulo.mp3");
+  imageScenery = loadImage("images/scenery/dungeon.png");
+  imageBat = loadImage("images/scenery/bath.png");
+  imageCharacter = loadImage("images/maincaracter/warior.png");
+  imageBubble = loadImage("images/enemy/gotinha.png");
 }
 
 function keyPressed() {
@@ -71,18 +48,20 @@ function setup() {
 
   gameSound.loop();
 
-  scenario = new Scenario(imageScenery, speed);
+  scenario = factory.scenario();
+  bat = factory.bat();
+
   character = factory.character();
+
   bubble = factory.bubble();
 }
 
-function draw(){
+function draw() {
   animation(scenario);
+  bat.map((bat) => animation(bat));
   animation(character);
-  animation(bubble);
-//fazer factory dos personagens e passar como argumento cada um para a colisão
-  if (character.collision(bubble)) {
-    console.log("colidiu");
-    noLoop();
-  }
+  bubble.map((bubble) => {
+    animation(bubble);
+    character.collision(bubble) ? noLoop() : null;
+  });
 }
