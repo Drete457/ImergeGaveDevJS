@@ -1,5 +1,5 @@
 class Character extends AnimationDraw{
-  constructor(image, inicialPositionX, inicialPositionY, characterWidth, characterHeigth, sizeX, sizeY, spritePositionX, spritePositionY, numberOfMovements) {
+  constructor(image, inicialPositionX, inicialPositionY, characterWidth, characterHeigth, sizeX, sizeY, spritePositionX, spritePositionY, numberOfMovements, jumpSound) {
     super(image, inicialPositionX, inicialPositionY, characterWidth, characterHeigth, sizeX, sizeY, spritePositionX, spritePositionY);
 
     //the full sprite size will be use for the caracter movement
@@ -10,6 +10,8 @@ class Character extends AnimationDraw{
     this.gravity = 9.807;
     this.jumpSpeed = 0;
     this.humanStrength = 3.73;
+
+    this.jumpSound = jumpSound
   }
 
   animation(){
@@ -20,6 +22,7 @@ class Character extends AnimationDraw{
 
   jump() {
     this.jumpSpeed = -this.gravity * this.humanStrength;
+    this.jumpSound.play();
   }
 
   applyGravity() {
@@ -33,8 +36,8 @@ class Character extends AnimationDraw{
     return collideRectRect(
       this.inicialPositionX,
       this.inicialPositionY,
-      characterWidth * precision,
-      characterHeigth * precision,
+      this.characterWidth * precision,
+      this.characterHeigth * precision,
       enemy.inicialPositionX,
       enemy.inicialPositionY,
       enemy.characterWidth * precision,
