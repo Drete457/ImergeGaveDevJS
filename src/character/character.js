@@ -65,6 +65,21 @@ class Character extends AnimationDraw {
     if (enemy instanceof Bat) {
       return false;
     }
+    if (enemy instanceof PowerUpPoint) {
+      if (collideRectRect(this.inicialPositionX,
+        this.inicialPositionY,
+        this.characterWidth,
+        this.characterHeight,
+        enemy.inicialPositionX,
+        enemy.inicialPositionY,
+        enemy.characterWidth,
+        enemy.characterHeight,
+      )) {
+        enemy.inicialPositionX = -width;
+        points.add();
+      }
+      return false;
+    }
     return collideRectRect(
       this.inicialPositionX + width / 25,
       this.inicialPositionY,

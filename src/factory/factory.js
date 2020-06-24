@@ -70,7 +70,7 @@ class Factory {
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
     let inicialPositionY = Math.floor(
-      Math.random() * ((height - characterHeigth) - height / 1.3) + height / 1.3,
+      Math.random() * (height - characterHeigth - height / 1.3) + height / 1.3,
     );
     return new Bubble(
       imageBubble,
@@ -97,7 +97,7 @@ class Factory {
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
     let inicialPositionY = Math.floor(
-      Math.random() * ((height - characterHeigth) - height / 1.4) + height / 1.4,
+      Math.random() * (height - characterHeigth - height / 1.4) + height / 1.4,
     );
     return new Troll(
       imageTroll,
@@ -124,7 +124,7 @@ class Factory {
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
     let inicialPositionY = Math.floor(
-      Math.random() * ((height - characterHeigth) - height / 1.3) + height / 1.3,
+      Math.random() * (height - characterHeigth - height / 1.3) + height / 1.3,
     );
     return new FlyBubble(
       imageFlyBubble,
@@ -137,6 +137,25 @@ class Factory {
       spritePositionX,
       spritePositionY,
       flyBubbleSpeed,
+    );
+  }
+
+  powerUp() {
+    //size of the enemy on the screen
+    let characterWidth = 80;
+    let characterHeigth = 80;
+    //size of the enemy on the sprite
+    let powerSpeed = speed;
+    //enemy position and image on the screen
+    let inicialPositionX = inicialEnemyX();
+    let inicialPositionY =  (height - height/2);
+    return new PowerUpPoint(
+      imagePowerUp,
+      inicialPositionX,
+      inicialPositionY,
+      characterWidth,
+      characterHeigth,
+      powerSpeed,
     );
   }
 
@@ -154,7 +173,7 @@ class Factory {
   }
 
   enemy() {
-    let random = Math.ceil(Math.random() * 4);
+    let random = Math.ceil(Math.random() * 5);
     switch (random) {
       case 1:
         return this.bat();
@@ -167,6 +186,9 @@ class Factory {
         break;
       case 4:
         return this.flybubble();
+        break;
+      case 5:
+        return this.powerUp();
         break;
     }
   }

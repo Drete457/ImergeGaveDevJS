@@ -34,6 +34,7 @@ let gameRun = false;
 let imageInicialScreen;
 let inicialScreen;
 let imageKnight;
+let imagePowerUP;
 let reset;
 let gameApp;
 let inicialEnemyX;
@@ -55,6 +56,7 @@ function preload() {
   imageGameOver = loadImage("images/assets/game-over.png");
   imageInicialScreen = loadImage("images/scenery/inicialscreen.jpg");
   font = loadFont("images/assets/fonteTelaInicial.otf");
+  imagePowerUp = loadImage("images/scenery/power.png");
   imageKnight = createImg("images/maincaracter/animation.gif", "images/maincaracter/animation.gif");
   imageKnight.hide();
 }

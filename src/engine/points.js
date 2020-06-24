@@ -6,6 +6,10 @@ class Points {
     draw() { 
         this.points += 0.03;
     }
+
+    add() {
+        this.points += 100;
+    }
     
     animation() {
         textSize(100);
