@@ -164,7 +164,7 @@ class Factory {
   }
 
   enemys() {
-    let numberOfEnemys = Math.ceil(Math.random() * (3 - 1) + 1);
+    let numberOfEnemys = Math.ceil(Math.random() * (4 - 2) + 2);
     let list = [];
     for (let i = 0; i <= numberOfEnemys; i++) {
       list.push(this.enemy());
