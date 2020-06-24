@@ -102,7 +102,6 @@ class Factory {
 
   enemys() {
     let numberOfEnemys = Math.ceil(Math.random() * 10);
-    console.log(numberOfEnemys)
     let list = [];
     for (let i = 0; i <= numberOfEnemys; i++) {
       switch (Math.ceil(Math.random() * 2)) {
