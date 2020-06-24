@@ -9,6 +9,7 @@ class GameOver{
     }
     
     animation() {
+        textSize(40);
         fill(190);
         text("YOU COLLID WHIT AN ENEMY", width / 2, height / 1.7);
         text("YOU DIED", width / 2, height / 1.6);

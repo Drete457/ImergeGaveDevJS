@@ -29,7 +29,7 @@ class Character extends AnimationDraw{
 
   applyGravity() {
     this.inicialPositionY += this.jumpSpeed;
-    this.jumpSpeed += this.gravity*0.4; 
+    this.jumpSpeed += this.gravity*0.25; 
     this.inicialPositionY > this.inicialY ? this.inicialPositionY = this.inicialY : null;
     this.inicialPositionY === this.inicialY ? this.numberOfJumps = 2 : null; 
   }

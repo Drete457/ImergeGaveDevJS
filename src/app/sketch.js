@@ -10,7 +10,7 @@ let scenario;
 let imageBat;
 
 //GameSpeed
-let speed = 3;
+let speed = 4;
 
 //factory
 let factory;
@@ -38,6 +38,7 @@ let inicialEnemyX = () => {
 let imageGameOver;
 let gameOver;
 let font;
+let points;
 let enemys = [];
 
 function preload() {
@@ -60,29 +61,28 @@ function keyPressed() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(40);
+  frameRate(100);
   reset();
 }
 
 function draw() {
   animation(scenario);
-
   animation(character);
 
   enemys.map((enemy) => {
-    enemy.inicialPositionX > -enemy.characterWidth ? animation(enemy) :  enemys[enemys.indexOf(enemy)] = factory.enemy();
-    //character.collision(enemy) ? animation(gameOver) : null;
+  enemy.inicialPositionX > -enemy.characterWidth ? animation(enemy) :  enemys[enemys.indexOf(enemy)] = factory.enemy();
+ // character.collision(enemy) ? animation(gameOver) : animation(points);
   });
 }
 
 function reset() {
   factory = new Factory();
+  points = new Points();
   animation = new AnimationMovement().animation;
   spritePositionX = 0;
   spritePositionY = 0;
 
   textFont(font);
-  textSize(40);
   textAlign(CENTER, CENTER);
 
   gameSound.loop();

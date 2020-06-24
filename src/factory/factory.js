@@ -39,12 +39,12 @@ class Factory {
       Math.random() * (height / 2 - height / 11) + height / 11,
     );
     //size of the enemy on the screen
-    let characterWidth = 60;
-    let characterHeigth = 45;
+    let characterWidth = 160;
+    let characterHeigth = 120;
     //size of the enemy on the sprite
     let sizeXBt = 160;
     let sizeYBt = 120;
-    let batSpeed = speed * 3;
+    let batSpeed = speed * 2;
     return new Bat(
       imageBat,
       inicialPositionX,
@@ -63,11 +63,11 @@ class Factory {
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
     let inicialPositionY = Math.floor(
-      Math.random() * (height - 50 - height / 1.3) + height / 1.3,
+      Math.random() * (height - 204 - height / 1.3) + height / 1.3,
     );
     //size of the enemy on the screen
-    let characterWidth = 52;
-    let characterHeigth = 52;
+    let characterWidth = 104;
+    let characterHeigth = 104;
     //size of the enemy on the sprite
     let sizeXBb = 104;
     let sizeYBb = 104;
@@ -90,11 +90,11 @@ class Factory {
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
     let inicialPositionY = Math.floor(
-      Math.random() * (height - 200 - height / 1.3) + height / 1.3,
+      Math.random() * (height - 300 - height / 1.3) + height / 1.3,
     );
     //size of the enemy on the screen
-    let characterWidth = 200;
-    let characterHeigth = 200;
+    let characterWidth = 300;
+    let characterHeigth = 300;
     //size of the enemy on the sprite
     let sizeXTl = 400;
     let sizeYTl = 400;
@@ -117,11 +117,11 @@ class Factory {
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
     let inicialPositionY = Math.floor(
-      Math.random() * (height - 50 - height / 1.3) + height / 1.3,
+      Math.random() * (height - 200 - height / 1.3) + height / 1.3,
     );
     //size of the enemy on the screen
-    let characterWidth = 100;
-    let characterHeigth = 75;
+    let characterWidth = 200;
+    let characterHeigth = 150;
     //size of the enemy on the sprite
     let sizeXBb = 200;
     let sizeYBb = 150;
@@ -147,7 +147,7 @@ class Factory {
   enemys() {
     let numberOfEnemys = Math.ceil(Math.random() * (10 - 5) + 5);
     let list = [];
-    for (let i = 0; i <= numberOfEnemys; i++) {
+    for (let i = 0; i <= 3; i++) {
       list.push(this.enemy());
     }
     return list;
