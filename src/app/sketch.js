@@ -55,13 +55,14 @@ function preload() {
   imageGameOver = loadImage("images/assets/game-over.png");
   imageInicialScreen = loadImage("images/scenery/inicialscreen.jpg");
   font = loadFont("images/assets/fonteTelaInicial.otf");
-  imageKnight = createImg("images/maincaracter/animation.gif");
+  imageKnight = createImg("images/maincaracter/animation.gif", "images/maincaracter/animation.gif");
+  imageKnight.hide();
 }
 
 function keyPressed() {
   key === " " ? character.jump() : null;
   key === "r" ? new Reset() : null;
-  key === "s" ? gameRun = true : null;
+  key === "s" ? gameRunApp() : null;
 }
 
 function setup() {
@@ -76,3 +77,7 @@ function draw() {
   gameRun ? gameApp.run() : animation(inicialScreen);
 }
 
+function gameRunApp() {
+  gameRun = true;
+  imageKnight.hide();
+}
