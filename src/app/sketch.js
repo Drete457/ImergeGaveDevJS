@@ -21,11 +21,17 @@ let character;
 
 //Enemy Bubble
 let imageBubble;
+let imageTroll;
 
 //control the animation for all enemy's and main character
 let animation;
 
 //UI of the game
+let inicialEnemyX = () => {
+  return Math.floor(
+    Math.random() * ((width + 50) + width / 1.3) + width / 1.3,
+  );
+}
 let imageGameOver;
 let gameOver;
 let font;
@@ -38,6 +44,7 @@ function preload() {
   imageBat = loadImage("images/scenery/bath.png");
   imageCharacter = loadImage("images/maincaracter/warior.png");
   imageBubble = loadImage("images/enemy/gotinha.png");
+  imageTroll = loadImage("images/enemy/troll.png");
   imageGameOver = loadImage("images/assets/game-over.png");
   font = loadFont("images/assets/fonteTelaInicial.otf");
 }

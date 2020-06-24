@@ -4,20 +4,18 @@ class Factory {
   }
 
   bat() {
-    //bat position and image on the screen
-    let inicialPositionX = Math.floor(
-      Math.random() * (width + width / 1.3) + width / 1.3,
-    );
+    //enemy position and image on the screen
+    let inicialPositionX = inicialEnemyX();
     let inicialPositionY = Math.floor(
-      Math.random() * (height / 5 - height / 11) + height / 11,
+      Math.random() * (height / 2 - height / 11) + height / 11,
     );
-    //size of the bat on the screen
+    //size of the enemy on the screen
     let characterWidth = 60;
     let characterHeigth = 45;
-    //size of the bat in the file
+    //size of the enemy on the sprite
     let sizeXBt = 160;
     let sizeYBt = 120;
-    //reference white sprite use of the bat
+    //reference whit sprite to start
     let spritePositionXBt = 0;
     let spritePositionYBt = 0;
     let batSpeed = 10;
@@ -65,27 +63,25 @@ class Factory {
   }
 
   bubble() {
-    //bubble position and image on the screen
-    let inicialPositionXBb = Math.floor(
-      Math.random() * (width + width / 1.3) + width / 1.3,
-    );
-    let inicialPositionYBb = Math.floor(
+    //enemy position and image on the screen
+    let inicialPositionX = inicialEnemyX();
+    let inicialPositionY = Math.floor(
       Math.random() * (height - 50 - height / 1.3) + height / 1.3,
     );
-    //size of the bubble on the screen
+    //size of the enemy on the screen
     let characterWidth = 52;
     let characterHeigth = 52;
-    //size of the bubble in the file
+    //size of the enemy on the sprite
     let sizeXBb = 104;
     let sizeYBb = 104;
-    //reference white sprite use of the bubble
+    //reference whit sprite to start
     let spritePositionXBb = 0;
     let spritePositionYBb = 0;
     let bubbleSpeed = 10;
     return new Bubble(
       imageBubble,
-      inicialPositionXBb,
-      inicialPositionYBb,
+      inicialPositionX,
+      inicialPositionY,
       characterWidth,
       characterHeigth,
       sizeXBb,
@@ -93,6 +89,36 @@ class Factory {
       spritePositionXBb,
       spritePositionYBb,
       bubbleSpeed,
+    );
+  }
+
+  troll() {
+    //enemy position and image on the screen
+    let inicialPositionX = inicialEnemyX();
+    let inicialPositionY = Math.floor(
+      Math.random() * (height - 50 - height / 1.3) + height / 1.3,
+    );
+    //size of the enemy on the screen
+    let characterWidth = 200;
+    let characterHeigth = 200;
+    //size of the enemy on the sprite
+    let sizeXTl = 400;
+    let sizeYTl = 400;
+    //reference whit sprite to start
+    let spritePositionXTl = 0;
+    let spritePositionYTl = 0;
+    let trollSpeed = 8;
+    return new Troll(
+      imageTroll,
+      inicialPositionX,
+      inicialPositionY,
+      characterWidth,
+      characterHeigth,
+      sizeXTl,
+      sizeYTl,
+      spritePositionXTl,
+      spritePositionYTl,
+      trollSpeed,
     );
   }
 
@@ -104,25 +130,21 @@ class Factory {
     let numberOfEnemys = Math.ceil(Math.random() * 10);
     let list = [];
     for (let i = 0; i <= numberOfEnemys; i++) {
-      switch (Math.ceil(Math.random() * 2)) {
-        case 1:
-          list.push(this.bat());
-          break;
-        case 2:
-          list.push(this.bubble());
-          break;
-      }
+      list.push(this.enemy());
     }
     return list;
   }
 
   enemy() {
-    switch (Math.ceil(Math.random() * 2)) {
+    switch (Math.ceil(Math.random() * 3)) {
       case 1:
         return this.bat();
         break;
       case 2:
         return this.bubble();
+        break;
+      case 3:
+        return this.troll();
         break;
     }
   }
