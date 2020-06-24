@@ -19,9 +19,12 @@ let factory;
 let imageCharacter;
 let character;
 
-//Enemy Bubble
+//Enemy
 let imageBubble;
 let imageTroll;
+let imageFlyBubble;
+let spritePositionX;
+let spritePositionY;
 
 //control the animation for all enemy's and main character
 let animation;
@@ -29,7 +32,7 @@ let animation;
 //UI of the game
 let inicialEnemyX = () => {
   return Math.floor(
-    Math.random() * ((width + 50) + width / 1.3) + width / 1.3,
+    Math.random() * ((width + 100) + width ) + width + 10,
   );
 }
 let imageGameOver;
@@ -45,6 +48,7 @@ function preload() {
   imageCharacter = loadImage("images/maincaracter/warior.png");
   imageBubble = loadImage("images/enemy/gotinha.png");
   imageTroll = loadImage("images/enemy/troll.png");
+  imageFlyBubble = loadImage("images/enemy/gotinha-voadora.png");
   imageGameOver = loadImage("images/assets/game-over.png");
   font = loadFont("images/assets/fonteTelaInicial.otf");
 }
@@ -66,7 +70,7 @@ function draw() {
   animation(character);
 
   enemys.map((enemy) => {
-    enemy.inicialPositionX > 0 ? animation(enemy) :  enemys[enemys.indexOf(enemy)] = factory.enemy();
+    enemy.inicialPositionX > -enemy.characterWidth ? animation(enemy) :  enemys[enemys.indexOf(enemy)] = factory.enemy();
     //character.collision(enemy) ? animation(gameOver) : null;
   });
 }
@@ -74,6 +78,8 @@ function draw() {
 function reset() {
   factory = new Factory();
   animation = new AnimationMovement().animation;
+  spritePositionX = 0;
+  spritePositionY = 0;
 
   textFont(font);
   textSize(40);

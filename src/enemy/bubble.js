@@ -14,7 +14,7 @@ class Bubble extends AnimationDraw {
 
     move() {
         this.inicialPositionX += -this.speed;
-        this.inicialPositionX < -this.characterWidth ? this.inicialPositionX = width : null;
+       // this.inicialPositionX < -this.characterWidth ? this.inicialPositionX = width : null;
     }
 
 }

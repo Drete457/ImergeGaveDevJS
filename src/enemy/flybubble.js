@@ -1,4 +1,4 @@
-class Troll extends AnimationDraw {
+class FlyBubble extends AnimationDraw {
 
     constructor(image, inicialPositionX, inicialPositionY, characterWidth, characterHeight, sizeX, sizeY, spritePositionX, spritePositionY, speed){
         super(image, inicialPositionX, inicialPositionY, characterWidth, characterHeight, sizeX, sizeY, spritePositionX, spritePositionY);
@@ -6,9 +6,9 @@ class Troll extends AnimationDraw {
     } 
 
     animation() {
-        this.spritePositionX >= 1600 ? this.spritePositionY += this.sizeY : null; 
-        this.spritePositionX < 1600 ? this.spritePositionX += this.sizeX : this.spritePositionX = 0;   
-        this.spritePositionY >= 2000 && this.spritePositionX > 800 ? this.spritePositionY = 0 : null;
+        this.spritePositionX >= 400 ? this.spritePositionY += this.sizeY : null; 
+        this.spritePositionX < 400 ? this.spritePositionX += this.sizeX : this.spritePositionX = 0;   
+        if (this.spritePositionY >= 750 && this.spritePositionX > 0) { this.spritePositionY = 0; this.spritePositionX = 0; }
         this.move();
     }
 

@@ -3,36 +3,6 @@ class Factory {
     return new Scenario(imageScenery, speed);
   }
 
-  bat() {
-    //enemy position and image on the screen
-    let inicialPositionX = inicialEnemyX();
-    let inicialPositionY = Math.floor(
-      Math.random() * (height / 2 - height / 11) + height / 11,
-    );
-    //size of the enemy on the screen
-    let characterWidth = 60;
-    let characterHeigth = 45;
-    //size of the enemy on the sprite
-    let sizeXBt = 160;
-    let sizeYBt = 120;
-    //reference whit sprite to start
-    let spritePositionXBt = 0;
-    let spritePositionYBt = 0;
-    let batSpeed = 10;
-    return new Bat(
-      imageBat,
-      inicialPositionX,
-      inicialPositionY,
-      characterWidth,
-      characterHeigth,
-      sizeXBt,
-      sizeYBt,
-      spritePositionXBt,
-      spritePositionYBt,
-      batSpeed,
-    );
-  }
-
   character() {
     //character position
     let inicialPositionX = 100;
@@ -62,6 +32,33 @@ class Factory {
     );
   }
 
+  bat() {
+    //enemy position and image on the screen
+    let inicialPositionX = inicialEnemyX();
+    let inicialPositionY = Math.floor(
+      Math.random() * (height / 2 - height / 11) + height / 11,
+    );
+    //size of the enemy on the screen
+    let characterWidth = 60;
+    let characterHeigth = 45;
+    //size of the enemy on the sprite
+    let sizeXBt = 160;
+    let sizeYBt = 120;
+    let batSpeed = speed * 3;
+    return new Bat(
+      imageBat,
+      inicialPositionX,
+      inicialPositionY,
+      characterWidth,
+      characterHeigth,
+      sizeXBt,
+      sizeYBt,
+      spritePositionX,
+      spritePositionY,
+      batSpeed,
+    );
+  }
+
   bubble() {
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
@@ -74,10 +71,7 @@ class Factory {
     //size of the enemy on the sprite
     let sizeXBb = 104;
     let sizeYBb = 104;
-    //reference whit sprite to start
-    let spritePositionXBb = 0;
-    let spritePositionYBb = 0;
-    let bubbleSpeed = 10;
+    let bubbleSpeed = speed * 2.3;
     return new Bubble(
       imageBubble,
       inicialPositionX,
@@ -86,8 +80,8 @@ class Factory {
       characterHeigth,
       sizeXBb,
       sizeYBb,
-      spritePositionXBb,
-      spritePositionYBb,
+      spritePositionX,
+      spritePositionY,
       bubbleSpeed,
     );
   }
@@ -96,7 +90,7 @@ class Factory {
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
     let inicialPositionY = Math.floor(
-      Math.random() * (height - 50 - height / 1.3) + height / 1.3,
+      Math.random() * (height - 200 - height / 1.3) + height / 1.3,
     );
     //size of the enemy on the screen
     let characterWidth = 200;
@@ -104,10 +98,7 @@ class Factory {
     //size of the enemy on the sprite
     let sizeXTl = 400;
     let sizeYTl = 400;
-    //reference whit sprite to start
-    let spritePositionXTl = 0;
-    let spritePositionYTl = 0;
-    let trollSpeed = 8;
+    let trollSpeed = speed * 1.6;
     return new Troll(
       imageTroll,
       inicialPositionX,
@@ -116,9 +107,36 @@ class Factory {
       characterHeigth,
       sizeXTl,
       sizeYTl,
-      spritePositionXTl,
-      spritePositionYTl,
+      spritePositionX,
+      spritePositionY,
       trollSpeed,
+    );
+  }
+
+  flybubble() {
+    //enemy position and image on the screen
+    let inicialPositionX = inicialEnemyX();
+    let inicialPositionY = Math.floor(
+      Math.random() * (height - 50 - height / 1.3) + height / 1.3,
+    );
+    //size of the enemy on the screen
+    let characterWidth = 100;
+    let characterHeigth = 75;
+    //size of the enemy on the sprite
+    let sizeXBb = 200;
+    let sizeYBb = 150;
+    let flyBubbleSpeed = speed * 2.3;
+    return new FlyBubble(
+      imageFlyBubble,
+      inicialPositionX,
+      inicialPositionY,
+      characterWidth,
+      characterHeigth,
+      sizeXBb,
+      sizeYBb,
+      spritePositionX,
+      spritePositionY,
+      flyBubbleSpeed,
     );
   }
 
@@ -127,7 +145,7 @@ class Factory {
   }
 
   enemys() {
-    let numberOfEnemys = Math.ceil(Math.random() * 10);
+    let numberOfEnemys = Math.ceil(Math.random() * (10 - 5) + 5);
     let list = [];
     for (let i = 0; i <= numberOfEnemys; i++) {
       list.push(this.enemy());
@@ -136,7 +154,7 @@ class Factory {
   }
 
   enemy() {
-    switch (Math.ceil(Math.random() * 3)) {
+    switch (Math.ceil(Math.random() * 4)) {
       case 1:
         return this.bat();
         break;
@@ -145,6 +163,9 @@ class Factory {
         break;
       case 3:
         return this.troll();
+        break;
+      case 4:
+        return this.flybubble();
         break;
     }
   }
