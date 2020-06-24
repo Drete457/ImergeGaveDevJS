@@ -8,7 +8,6 @@ let scenario;
 
 //bat
 let imageBat;
-let bat;
 
 //GameSpeed
 let speed = 3;
@@ -22,7 +21,6 @@ let character;
 
 //Enemy Bubble
 let imageBubble;
-let bubble;
 
 //control the animation for all enemy's and main character
 let animation;
@@ -31,6 +29,7 @@ let animation;
 let imageGameOver;
 let gameOver;
 let font;
+let enemys = [];
 
 function preload() {
   gameSound = loadSound("sound/begin.ogg");
@@ -59,10 +58,9 @@ function draw() {
 
   animation(character);
 
-  bat.map((bat) => animation(bat));
-  bubble.map((bubble) => {
-    animation(bubble);
-    character.collision(bubble) ? animation(gameOver) : null;
+  enemys.map((enemy) => {
+    animation(enemy);
+    character.collision(enemy) ? animation(gameOver) : null;
   });
 }
 
@@ -77,11 +75,10 @@ function reset() {
   gameSound.loop();
 
   scenario = factory.scenario();
-  bat = factory.bat();
 
   character = factory.character();
 
-  bubble = factory.bubble();
+  enemys = factory.enemys();
 
   gameOver = factory.gameOver();
   
