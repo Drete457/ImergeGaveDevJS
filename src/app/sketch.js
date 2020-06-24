@@ -59,8 +59,8 @@ function draw() {
   animation(character);
 
   enemys.map((enemy) => {
-    animation(enemy);
-    character.collision(enemy) ? animation(gameOver) : null;
+    enemy.inicialPositionX > 0 ? animation(enemy) :  enemys[enemys.indexOf(enemy)] = factory.enemy();
+    //character.collision(enemy) ? animation(gameOver) : null;
   });
 }
 

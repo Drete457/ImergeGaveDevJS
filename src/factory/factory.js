@@ -106,13 +106,24 @@ class Factory {
     for (let i = 0; i <= numberOfEnemys; i++) {
       switch (Math.ceil(Math.random() * 2)) {
         case 1:
-         list.push(this.bat());
+          list.push(this.bat());
           break;
         case 2:
-         list.push(this.bubble());
+          list.push(this.bubble());
           break;
       }
     }
     return list;
+  }
+
+  enemy() {
+    switch (Math.ceil(Math.random() * 2)) {
+      case 1:
+        return this.bat();
+        break;
+      case 2:
+        return this.bubble();
+        break;
+    }
   }
 }
