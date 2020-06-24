@@ -5,15 +5,15 @@ class Factory {
 
   bat() {
     //bat position and image on the screen
-    let inicialPositionXBt = Math.floor(
+    let inicialPositionX = Math.floor(
       Math.random() * (width + width / 1.3) + width / 1.3,
     );
-    let inicialPositionYBt = Math.floor(
+    let inicialPositionY = Math.floor(
       Math.random() * (height / 5 - height / 11) + height / 11,
     );
     //size of the bat on the screen
-    let batWidth = 60;
-    let batHeigth = 45;
+    let characterWidth = 60;
+    let characterHeigth = 45;
     //size of the bat in the file
     let sizeXBt = 160;
     let sizeYBt = 120;
@@ -23,10 +23,10 @@ class Factory {
     let batSpeed = 10;
     return new Bat(
       imageBat,
-      inicialPositionXBt,
-      inicialPositionYBt,
-      batWidth,
-      batHeigth,
+      inicialPositionX,
+      inicialPositionY,
+      characterWidth,
+      characterHeigth,
       sizeXBt,
       sizeYBt,
       spritePositionXBt,
@@ -37,8 +37,8 @@ class Factory {
 
   character() {
     //character position
-    let inicialPositionXCh = 100;
-    let inicialPositionYCh = height - height / 3;
+    let inicialPositionX = 100;
+    let inicialPositionY = height - height / 3;
     //size of the character on the screen
     let characterWidth = width / 9;
     let characterHeigth = height / 3;
@@ -51,8 +51,8 @@ class Factory {
     let numberOfMovements = 8;
     return new Character(
       imageCharacter,
-      inicialPositionXCh,
-      inicialPositionYCh,
+      inicialPositionX,
+      inicialPositionY,
       characterWidth,
       characterHeigth,
       sizeXCh,
@@ -73,8 +73,8 @@ class Factory {
       Math.random() * (height - 50 - height / 1.3) + height / 1.3,
     );
     //size of the bubble on the screen
-    let bubbleWidth = 52;
-    let bubbleHeigth = 52;
+    let characterWidth = 52;
+    let characterHeigth = 52;
     //size of the bubble in the file
     let sizeXBb = 104;
     let sizeYBb = 104;
@@ -86,8 +86,8 @@ class Factory {
       imageBubble,
       inicialPositionXBb,
       inicialPositionYBb,
-      bubbleWidth,
-      bubbleHeigth,
+      characterWidth,
+      characterHeigth,
       sizeXBb,
       sizeYBb,
       spritePositionXBb,

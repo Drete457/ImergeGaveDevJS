@@ -35,7 +35,7 @@ class Character extends AnimationDraw{
   }
 
   collision(enemy) {
-    const precision = 0.7;
+    const precision = 0.6;
     if (enemy instanceof Bat) { return false };
     return collideRectRect(
       this.inicialPositionX,
