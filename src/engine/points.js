@@ -4,12 +4,12 @@ class Points {
     }
 
     draw() { 
-        this.points += 1;
+        this.points += 0.03;
     }
     
     animation() {
         textSize(100);
         fill(255);
-        text(this.points, width - width / 20, height / 20);
+        text(parseInt(this.points), width - width / 10, height / 10);
     }
 }

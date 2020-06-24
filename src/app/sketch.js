@@ -30,6 +30,7 @@ let spritePositionY;
 let animation;
 
 //UI of the game
+let gameRun = false;
 let inicialEnemyX = () => {
   return Math.floor(
     Math.random() * ((width + 100) + width ) + width + 10,
@@ -61,17 +62,23 @@ function keyPressed() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(100);
+  frameRate(40);
   reset();
 }
 
 function draw() {
+
+  gameRun ? game() : null;
+ 
+}
+
+function game() {
   animation(scenario);
   animation(character);
 
   enemys.map((enemy) => {
   enemy.inicialPositionX > -enemy.characterWidth ? animation(enemy) :  enemys[enemys.indexOf(enemy)] = factory.enemy();
- // character.collision(enemy) ? animation(gameOver) : animation(points);
+  character.collision(enemy) ? animation(gameOver) : animation(points);
   });
 }
 
@@ -85,6 +92,7 @@ function reset() {
   textFont(font);
   textAlign(CENTER, CENTER);
 
+  gameRun = true;
   gameSound.loop();
 
   scenario = factory.scenario();
@@ -94,6 +102,4 @@ function reset() {
   enemys = factory.enemys();
 
   gameOver = factory.gameOver();
-  
-  loop();
 }

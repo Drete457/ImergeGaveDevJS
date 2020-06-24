@@ -5,7 +5,7 @@ class Factory {
 
   character() {
     //character position
-    let inicialPositionX = 100;
+    let inicialPositionX = 150;
     let inicialPositionY = height - height / 3;
     //size of the character on the screen
     let characterWidth = width / 9;
@@ -60,11 +60,6 @@ class Factory {
   }
 
   bubble() {
-    //enemy position and image on the screen
-    let inicialPositionX = inicialEnemyX();
-    let inicialPositionY = Math.floor(
-      Math.random() * (height - 204 - height / 1.3) + height / 1.3,
-    );
     //size of the enemy on the screen
     let characterWidth = 104;
     let characterHeigth = 104;
@@ -72,6 +67,11 @@ class Factory {
     let sizeXBb = 104;
     let sizeYBb = 104;
     let bubbleSpeed = speed * 2.3;
+    //enemy position and image on the screen
+    let inicialPositionX = inicialEnemyX();
+    let inicialPositionY = Math.floor(
+      Math.random() * ((height - characterHeigth) - height / 1.3) + height / 1.3,
+    );
     return new Bubble(
       imageBubble,
       inicialPositionX,
@@ -87,11 +87,6 @@ class Factory {
   }
 
   troll() {
-    //enemy position and image on the screen
-    let inicialPositionX = inicialEnemyX();
-    let inicialPositionY = Math.floor(
-      Math.random() * (height - 300 - height / 1.3) + height / 1.3,
-    );
     //size of the enemy on the screen
     let characterWidth = 300;
     let characterHeigth = 300;
@@ -99,6 +94,11 @@ class Factory {
     let sizeXTl = 400;
     let sizeYTl = 400;
     let trollSpeed = speed * 1.6;
+    //enemy position and image on the screen
+    let inicialPositionX = inicialEnemyX();
+    let inicialPositionY = Math.floor(
+      Math.random() * ((height - characterHeigth) - height / 1.4) + height / 1.4,
+    );
     return new Troll(
       imageTroll,
       inicialPositionX,
@@ -114,11 +114,6 @@ class Factory {
   }
 
   flybubble() {
-    //enemy position and image on the screen
-    let inicialPositionX = inicialEnemyX();
-    let inicialPositionY = Math.floor(
-      Math.random() * (height - 200 - height / 1.3) + height / 1.3,
-    );
     //size of the enemy on the screen
     let characterWidth = 200;
     let characterHeigth = 150;
@@ -126,6 +121,11 @@ class Factory {
     let sizeXBb = 200;
     let sizeYBb = 150;
     let flyBubbleSpeed = speed * 2.3;
+    //enemy position and image on the screen
+    let inicialPositionX = inicialEnemyX();
+    let inicialPositionY = Math.floor(
+      Math.random() * ((height - characterHeigth) - height / 1.3) + height / 1.3,
+    );
     return new FlyBubble(
       imageFlyBubble,
       inicialPositionX,
@@ -145,16 +145,17 @@ class Factory {
   }
 
   enemys() {
-    let numberOfEnemys = Math.ceil(Math.random() * (10 - 5) + 5);
+    let numberOfEnemys = Math.ceil(Math.random() * (3 - 1) + 1);
     let list = [];
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i <= numberOfEnemys; i++) {
       list.push(this.enemy());
     }
     return list;
   }
 
   enemy() {
-    switch (Math.ceil(Math.random() * 4)) {
+    let random = Math.ceil(Math.random() * 4);
+    switch (random) {
       case 1:
         return this.bat();
         break;

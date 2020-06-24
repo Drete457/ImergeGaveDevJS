@@ -14,6 +14,6 @@ class GameOver{
         text("YOU COLLID WHIT AN ENEMY", width / 2, height / 1.7);
         text("YOU DIED", width / 2, height / 1.6);
         text("PRESS BUTTON 'S' TO RESTART THE GAME", width / 2, height / 1.5);
-        noLoop();
+        gameRun = false;          
     }
 }
