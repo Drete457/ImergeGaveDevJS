@@ -31,11 +31,12 @@ let animation;
 
 //UI of the game
 let gameRun = false;
-let inicialEnemyX = () => {
-  return Math.floor(
-    Math.random() * ((width + 100) + width ) + width + 10,
-  );
-}
+let imageInicialScreen;
+let inicialScreen;
+let imageKnight;
+let reset;
+let gameApp;
+let inicialEnemyX;
 let imageGameOver;
 let gameOver;
 let font;
@@ -52,54 +53,26 @@ function preload() {
   imageTroll = loadImage("images/enemy/troll.png");
   imageFlyBubble = loadImage("images/enemy/gotinha-voadora.png");
   imageGameOver = loadImage("images/assets/game-over.png");
+  imageInicialScreen = loadImage("images/scenery/inicialscreen.jpg");
   font = loadFont("images/assets/fonteTelaInicial.otf");
+  imageKnight = createImg("images/maincaracter/animation.gif");
 }
 
 function keyPressed() {
   key === " " ? character.jump() : null;
-  key === "s" ? reset() : null;
+  key === "r" ? new Reset() : null;
+  key === "s" ? gameRun = true : null;
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(40);
-  reset();
+  gameSound.loop();
+  new Reset();
+  gameApp = new GameApp();
 }
 
 function draw() {
-
-  gameRun ? game() : null;
- 
+  gameRun ? gameApp.run() : animation(inicialScreen);
 }
 
-function game() {
-  animation(scenario);
-  animation(character);
-
-  enemys.map((enemy) => {
-  enemy.inicialPositionX > -enemy.characterWidth ? animation(enemy) :  enemys[enemys.indexOf(enemy)] = factory.enemy();
-  character.collision(enemy) ? animation(gameOver) : animation(points);
-  });
-}
-
-function reset() {
-  factory = new Factory();
-  points = new Points();
-  animation = new AnimationMovement().animation;
-  spritePositionX = 0;
-  spritePositionY = 0;
-
-  textFont(font);
-  textAlign(CENTER, CENTER);
-
-  gameRun = true;
-  gameSound.loop();
-
-  scenario = factory.scenario();
-
-  character = factory.character();
-
-  enemys = factory.enemys();
-
-  gameOver = factory.gameOver();
-}
