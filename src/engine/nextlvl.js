@@ -17,7 +17,7 @@ function nextlvl() {
     this.renderNextLvl(8, 10);
   }
   /* if (points.points > 4000 && !lvl4) {
-    renderNextLvl();
+    renderNextLvl(); fazer o final do jogos? fight boss? um ecrã com um filme? um video? o que?
   }*/
 }
 
