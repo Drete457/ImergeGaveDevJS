@@ -3,6 +3,7 @@ class Reset {
     factory = new Factory();
     points = new Points();
     animation = new AnimationMovement().animation;
+    gameRun = false;
     lvl = 1;
     lvlFactory = new Lvl();
     lvl2 = true;
@@ -32,7 +33,7 @@ class Reset {
 
     character = factory.character();
 
-    enemys = factory.enemys();
+    enemys = factory.enemys(3, 5);
 
     gameOver = factory.gameOver();
     loop();

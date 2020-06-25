@@ -164,8 +164,8 @@ class Factory {
     return new GameOver(imageGameOver);
   }
 
-  enemys() {
-    let numberOfEnemys = parseInt(random(3, 5));
+  enemys(min,max) {
+    let numberOfEnemys = parseInt(random(min, max));
     let list = [];
     for (let i = 0; i <= numberOfEnemys; i++) {
       list.push(this.enemy());

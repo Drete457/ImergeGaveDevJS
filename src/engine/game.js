@@ -1,6 +1,6 @@
 class GameApp {
   run() {
-    image(background, 0, 0, width, height);
+    lvlFactory.backGround();
     keyIsDown(LEFT_ARROW) ? character.movement("left") : null;
     keyIsDown(RIGHT_ARROW) ? character.movement("right") : null;
     

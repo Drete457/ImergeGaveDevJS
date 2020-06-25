@@ -41,9 +41,10 @@ let lvl3;
 let lvl4;
 
 //UI of the game
-let gameRun = false;
+let gameRun;
 let imageInicialScreen;
 let inicialScreen;
+let nextLvlScreen;
 let imageKnight;
 let imagePowerUP;
 let reset;

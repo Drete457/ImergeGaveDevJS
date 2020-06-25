@@ -20,21 +20,29 @@ class InicialScreen extends AnimationDraw {
   }
 
   animation() {
-      imageKnight.position(width / 2.3, height / 3.2);
-      imageKnight.show();
+    textSize(120);
+    fill(350);
+    
+    this.showText ? text("WEDDING DUNGEONS", width / 2, height / 5.9) : null;
+
+    imageKnight.position(width / 2.3, height / 3.2);
+    imageKnight.show();
+
     textSize(40);
     textLeading(40);
-    fill(350);
+    
+
     text(
       "THE KING OF THE KINGDOM IS HOLDING A CONTEST,\n THE KNIGHT WHO HAS THE MOST POINTS,\n MARRIES THE PRINCESS.\n WARRIOR ARE YOU READY TO TEST YOUR DESTINY?\n AND CONQUER THE KINGDOM AND THE PRINCESS?",
       width / 2,
       height / 1.8,
-      );
-      text(
-        "CONTROLS: SPACE TO JUMP\n ARROW LEFT TO WALK LEFT\n ARROW RIGHT TO WALK RIGHT",
-        width / 2,
-        height / 1.3,
-      );
+    );
+    text(
+      "CONTROLS: SPACE TO JUMP\n ARROW LEFT TO WALK LEFT\n ARROW RIGHT TO WALK RIGHT",
+      width / 2,
+      height / 1.3,
+    );
+
     if (this.showText) {
       this.showText = false;
       text("PRESS BUTTON 'S' TO START THE GAME", width / 2, height / 1.15);
