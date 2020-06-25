@@ -175,7 +175,6 @@ class Factory {
 
   enemy() {
     let choose = parseInt(random(1, 6)); 
-      console.log(choose)
     switch (choose) {
       case 1:
         return this.bat();

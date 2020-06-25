@@ -1,0 +1,51 @@
+//Sound
+let gameSound;
+let jumpSound;
+
+//Scenario
+let background;
+let complement;
+let scenario;
+let lvlFactory
+let lvl;
+let imageScenery;
+let imageScenery2;
+let imageScenery3;
+
+//bat
+let imageBat;
+
+//GameSpeed
+let speed;
+
+//factory
+let factory;
+
+//Caracter
+let imageCharacter;
+let character;
+
+//Enemy
+let imageBubble;
+let imageTroll;
+let imageFlyBubble;
+let spritePositionX;
+let spritePositionY;
+
+//control the animation for all enemy's and main character
+let animation;
+
+//UI of the game
+let gameRun = false;
+let imageInicialScreen;
+let inicialScreen;
+let imageKnight;
+let imagePowerUP;
+let reset;
+let gameApp;
+let inicialEnemyX;
+let imageGameOver;
+let gameOver;
+let font;
+let points;
+let enemys = [];

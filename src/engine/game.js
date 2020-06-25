@@ -7,7 +7,7 @@ class GameApp {
       enemy.inicialPositionX > -enemy.characterWidth
         ? animation(enemy)
         : (enemys[enemys.indexOf(enemy)] = factory.enemy());
-      character.collision(enemy) ? animation(gameOver) : animation(points);
+     // character.collision(enemy) ? animation(gameOver) : animation(points);
     });
   }
 }
