@@ -1,5 +1,3 @@
-
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(40);
@@ -16,9 +14,6 @@ function keyPressed() {
 }
 
 function draw() {
-  image(background, 0, 0, width, height);
-  keyIsDown(LEFT_ARROW) ? character.movement("left") : null;
-  keyIsDown(RIGHT_ARROW) ? character.movement("right") : null;
   gameRun ? gameApp.run() : animation(inicialScreen);
 }
 

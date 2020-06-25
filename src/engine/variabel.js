@@ -6,8 +6,6 @@ let jumpSound;
 let background;
 let complement;
 let scenario;
-let lvlFactory
-let lvl;
 let imageScenery;
 let imageScenery2;
 let imageScenery3;
@@ -34,6 +32,13 @@ let spritePositionY;
 
 //control the animation for all enemy's and main character
 let animation;
+
+//lvl
+let lvlFactory
+let lvl;
+let lvl2;
+let lvl3;
+let lvl4;
 
 //UI of the game
 let gameRun = false;

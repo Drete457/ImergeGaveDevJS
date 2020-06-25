@@ -5,6 +5,9 @@ class Reset {
     animation = new AnimationMovement().animation;
     lvl = 1;
     lvlFactory = new Lvl();
+    lvl2 = true;
+    lvl3 = false;
+    lvl4 = false;
 
     spritePositionX = 0;
     spritePositionY = 0;
