@@ -51,6 +51,17 @@ class Character extends AnimationDraw {
     this.numberOfJumps--;
   }
 
+  movement(choose) {
+    switch(choose){
+      case "left":
+        this.inicialPositionX > 0 ? this.inicialPositionX -= 20 : null;
+        break;
+      case "right":
+        this.inicialPositionX < width*0.85 ? this.inicialPositionX += 20 : null;
+        break;
+    }
+  }
+
   applyGravity() {
     this.inicialPositionY += this.jumpSpeed;
     this.jumpSpeed += this.gravity * 0.211;
@@ -61,7 +72,7 @@ class Character extends AnimationDraw {
   }
 
   collision(enemy) {
-    const precision = 0.7;
+   const precision = 0.7;
     if (enemy instanceof Bat) {
       return false;
     }
