@@ -3,14 +3,20 @@ let gameSound;
 let jumpSound;
 
 //Scenario
-let imageScenery;
+let background;
+let complement;
 let scenario;
+let lvlFactory
+let lvl;
+let imageScenery;
+let imageScenery2;
+let imageScenery3;
 
 //bat
 let imageBat;
 
 //GameSpeed
-let speed = 4;
+let speed;
 
 //factory
 let factory;
@@ -47,7 +53,7 @@ let enemys = [];
 function preload() {
   gameSound = loadSound("sound/begin.ogg");
   jumpSound = loadSound("sound/somPulo.mp3");
-  imageScenery = loadImage("images/scenery/dungeon.png");
+  background = loadImage("images/scenery/background.jpg");
   imageBat = loadImage("images/scenery/bath.png");
   imageCharacter = loadImage("images/maincaracter/warior.png");
   imageBubble = loadImage("images/enemy/gotinha.png");
@@ -77,6 +83,7 @@ function keyPressed() {
 }
 
 function draw() {
+  image(background, 0, 0, width, height);
   keyIsDown(LEFT_ARROW) ? character.movement("left") : null;
   keyIsDown(RIGHT_ARROW) ? character.movement("right") : null;
   gameRun ? gameApp.run() : animation(inicialScreen);

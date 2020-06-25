@@ -1,6 +1,7 @@
 class Factory {
+
   scenario() {
-    return new Scenario(imageScenery, speed);
+    return new Scenario(imageScenery, speed, imageScenery2, imageScenery3);
   }
 
   character() {
@@ -148,7 +149,7 @@ class Factory {
     let powerSpeed = speed;
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
-    let inicialPositionY =  (height - height/2);
+    let inicialPositionY = height - height / 2;
     return new PowerUpPoint(
       imagePowerUp,
       inicialPositionX,
@@ -164,7 +165,7 @@ class Factory {
   }
 
   enemys() {
-    let numberOfEnemys = Math.ceil(Math.random() * (4 - 2) + 2);
+    let numberOfEnemys = parseInt(random(3, 5));
     let list = [];
     for (let i = 0; i <= numberOfEnemys; i++) {
       list.push(this.enemy());
@@ -173,8 +174,9 @@ class Factory {
   }
 
   enemy() {
-    let random = Math.ceil(Math.random() * 5);
-    switch (random) {
+    let choose = parseInt(random(1, 6)); 
+      console.log(choose)
+    switch (choose) {
       case 1:
         return this.bat();
         break;

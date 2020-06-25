@@ -3,6 +3,9 @@ class Reset {
     factory = new Factory();
     points = new Points();
     animation = new AnimationMovement().animation;
+    lvl = 1;
+    lvlFactory = new Lvl();
+
     spritePositionX = 0;
     spritePositionY = 0;
     inicialScreen = new InicialScreen(
@@ -21,6 +24,7 @@ class Reset {
     textFont(font);
     textAlign(CENTER, CENTER);
 
+    lvlFactory.lvl(lvl);
     scenario = factory.scenario();
 
     character = factory.character();
