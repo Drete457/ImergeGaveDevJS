@@ -3,6 +3,7 @@ function nextlvl() {
     lvl2 = false;
     lvl3 = true;
     lvl = 2;
+    health.reset();
     this.renderNextLvl(5, 7);
   }
   if (points.points > 2000 && lvl3) {
@@ -16,9 +17,9 @@ function nextlvl() {
     lvl = 4;
     this.renderNextLvl(8, 10);
   }
-  /* if (points.points > 4000 && !lvl4) {
-    renderNextLvl(); fazer o final do jogos? fight boss? um ecrã com um filme? um video? o que?
-  }*/
+  if (points.points > 4000 && !lvl4) {
+    // renderNextLvl(); fazer o final do jogos? fight boss? um ecrã com um filme? um video? o que?
+  }
 }
 
 function renderNextLvl(min, max) {

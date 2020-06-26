@@ -17,17 +17,17 @@ class Scenario {
 
   animation() {
     this.x1 -= this.speed;
-    this.x2 -= this.speed; 
+    this.x2 -= this.speed;
     this.x3 -= this.speed;
 
     if (this.x1 < -width) {
       this.x1 = width;
-    };
+    }
     if (this.x2 < -width) {
       this.x2 = width;
-    };
+    }
     if (this.x3 < -width) {
       this.x3 = width;
-    };
+    }
   }
 }

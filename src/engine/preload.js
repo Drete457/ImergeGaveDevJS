@@ -13,5 +13,4 @@ function preload() {
   imagePowerUp = loadImage("images/scenery/power.png");
   imageKnight = createImg("images/maincaracter/animation.gif", "images/maincaracter/animation.gif");
   imageKnight.hide();
- // imageHealth = loadImage("images/assets/coracao.png");
 }

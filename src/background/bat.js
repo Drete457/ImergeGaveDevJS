@@ -21,7 +21,7 @@ class Bat extends AnimationDraw {
       sizeY,
       spritePositionX,
       spritePositionY,
-      );
+    );
     this.speed = speed;
   }
 
@@ -34,6 +34,5 @@ class Bat extends AnimationDraw {
 
   move() {
     this.inicialPositionX += -this.speed;
- //   this.inicialPositionX < -this.characterWidth  ? (this.inicialPositionX = width) : null;
   }
 }

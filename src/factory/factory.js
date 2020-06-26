@@ -1,5 +1,4 @@
 class Factory {
-
   scenario() {
     return new Scenario(imageScenery, speed, imageScenery2, imageScenery3);
   }
@@ -168,7 +167,7 @@ class Factory {
     return new GameOver(imageGameOver);
   }
 
-  enemys(min,max) {
+  enemys(min, max) {
     let numberOfEnemys = parseInt(random(min, max));
     let list = [];
     for (let i = 0; i <= numberOfEnemys; i++) {
@@ -178,7 +177,7 @@ class Factory {
   }
 
   enemy() {
-    let choose = parseInt(random(1, 6)); 
+    let choose = parseInt(random(1, 6));
     switch (choose) {
       case 1:
         return this.bat();

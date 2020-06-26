@@ -52,12 +52,14 @@ class Character extends AnimationDraw {
   }
 
   movement(choose) {
-    switch(choose){
+    switch (choose) {
       case "left":
-        this.inicialPositionX > 0 ? this.inicialPositionX -= 20 : null;
+        this.inicialPositionX > 0 ? (this.inicialPositionX -= 20) : null;
         break;
       case "right":
-        this.inicialPositionX < width*0.85 ? this.inicialPositionX += 20 : null;
+        this.inicialPositionX < width * 0.85
+          ? (this.inicialPositionX += 20)
+          : null;
         break;
     }
   }
@@ -72,20 +74,23 @@ class Character extends AnimationDraw {
   }
 
   collision(enemy) {
-   const precision = 0.7;
+    const precision = 0.7;
     if (enemy instanceof Bat) {
       return false;
     }
     if (enemy instanceof PowerUpPoint) {
-      if (collideRectRect(this.inicialPositionX,
-        this.inicialPositionY,
-        this.characterWidth,
-        this.characterHeight,
-        enemy.inicialPositionX,
-        enemy.inicialPositionY,
-        enemy.characterWidth,
-        enemy.characterHeight,
-      )) {
+      if (
+        collideRectRect(
+          this.inicialPositionX,
+          this.inicialPositionY,
+          this.characterWidth,
+          this.characterHeight,
+          enemy.inicialPositionX,
+          enemy.inicialPositionY,
+          enemy.characterWidth,
+          enemy.characterHeight,
+        )
+      ) {
         enemy.inicialPositionX = -width;
         points.add();
       }

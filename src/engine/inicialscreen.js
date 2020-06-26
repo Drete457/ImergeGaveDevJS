@@ -22,7 +22,7 @@ class InicialScreen extends AnimationDraw {
   animation() {
     textSize(height / 8.15);
     fill(350);
-    
+
     this.showText ? text("WEDDING DUNGEONS", width / 2, height / 5.9) : null;
 
     imageKnight.position(width / 2.3, height / 3.2);
@@ -30,7 +30,6 @@ class InicialScreen extends AnimationDraw {
 
     textSize(height / 24.5);
     textLeading(height / 24.5);
-    
 
     text(
       "THE KING OF THE KINGDOM IS HOLDING A CONTEST,\n THE KNIGHT WHO HAS THE MOST POINTS,\n MARRIES THE PRINCESS.\n WARRIOR ARE YOU READY TO TEST YOUR DESTINY?\n AND CONQUER THE KINGDOM AND THE PRINCESS?",

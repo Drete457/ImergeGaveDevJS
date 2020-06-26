@@ -34,7 +34,7 @@ let spritePositionY;
 let animation;
 
 //lvl
-let lvlFactory
+let lvlFactory;
 let lvl;
 let lvl2;
 let lvl3;
@@ -54,6 +54,5 @@ let imageGameOver;
 let gameOver;
 let font;
 let points;
-//let imageHealth;
 let health;
 let enemys = [];

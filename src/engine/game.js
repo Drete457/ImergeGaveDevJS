@@ -3,7 +3,7 @@ class GameApp {
     lvlFactory.backGround();
     keyIsDown(LEFT_ARROW) ? character.movement("left") : null;
     keyIsDown(RIGHT_ARROW) ? character.movement("right") : null;
-    
+
     animation(scenario);
     animation(health);
     animation(character);
@@ -14,7 +14,7 @@ class GameApp {
       enemy.inicialPositionX > -enemy.characterWidth
         ? animation(enemy)
         : (enemys[enemys.indexOf(enemy)] = factory.enemy());
-      character.collision(enemy) ? this.gameOverAndLive(): animation(points);
+      character.collision(enemy) ? this.gameOverAndLive() : animation(points);
     });
   }
 

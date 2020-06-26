@@ -15,7 +15,9 @@ class Lvl {
         imageScenery3 = loadImage(
           "images/scenery/warrens.corridor_wall.24.png",
         );
-        nextLvlScreen = loadImage("images/scenery/warrens.corridor_wall.17.png");
+        nextLvlScreen = loadImage(
+          "images/scenery/warrens.corridor_wall.17.png",
+        );
         speed = 5;
         break;
       case 3:
