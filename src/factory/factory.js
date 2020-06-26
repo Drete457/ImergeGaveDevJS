@@ -5,7 +5,7 @@ class Factory {
 
   character() {
     //character position
-    let inicialPositionX = 150;
+    let inicialPositionX = width / 9.3;
     let inicialPositionY = height - height / 3;
     //size of the character on the screen
     let characterWidth = width / 9;
@@ -43,8 +43,8 @@ class Factory {
       Math.random() * (height / 2 - height / 11) + height / 11,
     );
     //size of the enemy on the screen
-    let characterWidth = 160;
-    let characterHeigth = 120;
+    let characterWidth =  width / 8.75;
+    let characterHeigth = height / 8.15;
     //size of the enemy on the sprite
     let sizeXBt = 160;
     let sizeYBt = 120;
@@ -65,8 +65,8 @@ class Factory {
 
   bubble() {
     //size of the enemy on the screen
-    let characterWidth = 104;
-    let characterHeigth = 104;
+    let characterWidth =  width / 13.46;
+    let characterHeigth = height / 9.41;
     //size of the enemy on the sprite
     let sizeXBb = 104;
     let sizeYBb = 104;
@@ -92,8 +92,8 @@ class Factory {
 
   troll() {
     //size of the enemy on the screen
-    let characterWidth = 300;
-    let characterHeigth = 300;
+    let characterWidth =  width / 4.66;
+    let characterHeigth = height / 3.26;
     //size of the enemy on the sprite
     let sizeXTl = 400;
     let sizeYTl = 400;
@@ -119,8 +119,8 @@ class Factory {
 
   flybubble() {
     //size of the enemy on the screen
-    let characterWidth = 200;
-    let characterHeigth = 150;
+    let characterWidth =  width / 7;
+    let characterHeigth = height / 6.52;
     //size of the enemy on the sprite
     let sizeXBb = 200;
     let sizeYBb = 150;
@@ -146,8 +146,8 @@ class Factory {
 
   powerUp() {
     //size of the enemy on the screen
-    let characterWidth = 80;
-    let characterHeigth = 80;
+    let characterWidth =  width / 17.5;
+    let characterHeigth = height / 12.23;
     //size of the enemy on the sprite
     let powerSpeed = speed;
     //enemy position and image on the screen
