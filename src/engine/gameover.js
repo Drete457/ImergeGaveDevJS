@@ -11,7 +11,7 @@ class GameOver{
     animation() {
         textSize(height / 24.5);
         fill(350);
-        text("YOU COLLID WHIT AN ENEMY", width / 2, height / 1.7);
+        text("YOU LOST YOUR SOUL", width / 2, height / 1.7);
         text("YOU DIED", width / 2, height / 1.5);
         text("PRESS BUTTON 'R' TO RESTART THE GAME", width / 2, height / 1.3);
         gameRun = false; 

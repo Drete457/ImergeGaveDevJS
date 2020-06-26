@@ -54,4 +54,6 @@ let imageGameOver;
 let gameOver;
 let font;
 let points;
+//let imageHealth;
+let health;
 let enemys = [];

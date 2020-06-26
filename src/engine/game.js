@@ -5,6 +5,7 @@ class GameApp {
     keyIsDown(RIGHT_ARROW) ? character.movement("right") : null;
     
     animation(scenario);
+    animation(health);
     animation(character);
 
     nextlvl();
@@ -13,7 +14,11 @@ class GameApp {
       enemy.inicialPositionX > -enemy.characterWidth
         ? animation(enemy)
         : (enemys[enemys.indexOf(enemy)] = factory.enemy());
-      character.collision(enemy) ? animation(gameOver) : animation(points);
+      character.collision(enemy) ? this.gameOverAndLive(): animation(points);
     });
+  }
+
+  gameOverAndLive() {
+    !health.reduce() ? animation(gameOver) : null;
   }
 }

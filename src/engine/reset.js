@@ -9,6 +9,7 @@ class Reset {
     lvl2 = true;
     lvl3 = false;
     lvl4 = false;
+    health = factory.health();
 
     spritePositionX = 0;
     spritePositionY = 0;
