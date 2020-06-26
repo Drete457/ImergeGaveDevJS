@@ -2,8 +2,6 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(40);
   gameSound.loop();
-  console.log(width)
-  console.log(height)
 
   new Reset();
   gameApp = new GameApp();
