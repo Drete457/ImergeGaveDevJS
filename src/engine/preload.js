@@ -16,4 +16,5 @@ function preload() {
     "images/maincaracter/animation.gif",
   );
   imageKnight.hide();
+  setTimeout(2000)
 }

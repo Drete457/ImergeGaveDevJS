@@ -3,6 +3,7 @@ canvas {
 }
 
 body{
+  overflow: hidden; /* Hide scrollbars */
   background:black;
   color:white;
   display:flex;
