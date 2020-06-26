@@ -25,7 +25,7 @@ class InicialScreen extends AnimationDraw {
 
     this.showText ? text("WEDDING DUNGEONS", width / 2, height / 5.9) : null;
 
-    imageKnight.position(width / 2.3, height / 3.2);
+    imageKnight.position(width / 1.3, height / 3.2);
     imageKnight.show();
 
     textSize(height / 24.5);
