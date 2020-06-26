@@ -9,11 +9,11 @@ class GameOver{
     }
     
     animation() {
-        textSize(40);
+        textSize(height / 24.5);
         fill(350);
         text("YOU COLLID WHIT AN ENEMY", width / 2, height / 1.7);
-        text("YOU DIED", width / 2, height / 1.6);
-        text("PRESS BUTTON 'R' TO RESTART THE GAME", width / 2, height / 1.4);
+        text("YOU DIED", width / 2, height / 1.5);
+        text("PRESS BUTTON 'R' TO RESTART THE GAME", width / 2, height / 1.3);
         gameRun = false; 
         noLoop();
     }

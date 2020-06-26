@@ -12,8 +12,8 @@ class Points {
     }
     
     animation() {
-        textSize(100);
+        textSize(height / 9.79);
         fill(255);
-        text(parseInt(this.points), width - width / 10, height / 10);
+        text("SCORE: " + parseInt(this.points), width - width / 10*2, height / 10);
     }
 }

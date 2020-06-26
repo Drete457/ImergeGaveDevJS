@@ -19,10 +19,10 @@ class NextScreen extends AnimationDraw {
 
   animation() {
     fill(350);
-    textSize(120);
+    textSize(height / 8.15);
     this.showText ? text("WEDDING DUNGEONS", width / 2, height / 5.9) : null;
 
-    textSize(40);
+    textSize(height / 24.5);
     fill(350);
 
     text(this.lvlText(), width / 2, height / 1.8);
@@ -30,7 +30,7 @@ class NextScreen extends AnimationDraw {
     if (this.showText) {
       this.showText = false;
       text(
-        "PRESS BUTTON 'S' TO CONTINUE TO THE NEXT LEVEL THE GAME",
+        "PRESS BUTTON 'S' TO CONTINUE TO THE NEXT LEVEL",
         width / 2,
         height / 1.11,
       );

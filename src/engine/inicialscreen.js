@@ -20,7 +20,7 @@ class InicialScreen extends AnimationDraw {
   }
 
   animation() {
-    textSize(120);
+    textSize(height / 8.15);
     fill(350);
     
     this.showText ? text("WEDDING DUNGEONS", width / 2, height / 5.9) : null;
@@ -28,8 +28,8 @@ class InicialScreen extends AnimationDraw {
     imageKnight.position(width / 2.3, height / 3.2);
     imageKnight.show();
 
-    textSize(40);
-    textLeading(40);
+    textSize(height / 24.5);
+    textLeading(height / 24.5);
     
 
     text(
@@ -38,14 +38,14 @@ class InicialScreen extends AnimationDraw {
       height / 1.8,
     );
     text(
-      "CONTROLS: SPACE TO JUMP\n ARROW LEFT TO WALK LEFT\n ARROW RIGHT TO WALK RIGHT",
+      "CONTROLS:\n SPACE TO JUMP\n ARROW LEFT TO WALK LEFT\n ARROW RIGHT TO WALK RIGHT",
       width / 2,
       height / 1.3,
     );
 
     if (this.showText) {
       this.showText = false;
-      text("PRESS BUTTON 'S' TO START THE GAME", width / 2, height / 1.15);
+      text("PRESS BUTTON 'S' TO START THE GAME", width / 2, height / 1.11);
       this.show();
     } else {
       this.showText = true;
