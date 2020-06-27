@@ -1,12 +1,11 @@
 function nextlvl() {
-  if (points.points > 10 && lvl2) {
+  if (points.points > 1 && lvl2) {
     lvl2 = false;
     lvl3 = true;
     lvl = 2;
-    health.reset();
     this.renderNextLvl(5, 7);
   }
-  if (points.points > 200 && lvl3) {
+  if (points.points > 2 && lvl3) {
     lvl3 = false;
     lvl4 = true;
     lvl = 3;
