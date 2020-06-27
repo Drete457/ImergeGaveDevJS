@@ -11,6 +11,8 @@ class Character extends AnimationDraw {
     spritePositionY,
     numberOfMovements,
     jumpSound,
+    jumpLeft,
+    jumpRight,
   ) {
     super(
       image,
@@ -25,9 +27,9 @@ class Character extends AnimationDraw {
     );
 
     //the full sprite size will be use for the caracter movement
-    this.sizeXMax = this.sizeX * numberOfMovements;
-    this.sizeYMax = this.sizeY;
-
+    this.sizeXMax = sizeX * numberOfMovements;
+    this.sizeYMax = sizeY;
+    this.numberOfMovements = numberOfMovements;
     this.inicialY = inicialPositionY;
     this.gravity = 9.807;
     this.jumpSpeed = 0;
@@ -35,17 +37,33 @@ class Character extends AnimationDraw {
     this.humanStrength = 3.73;
 
     this.inicialSpritePositionY = spritePositionY;
-
+  
+    this.direction;
+    this.jumpLeft = sizeY * jumpLeft;
+    this.jumpRight = sizeY * jumpRight;
+    this.jumpAutorization = true;
     this.jumpSound = jumpSound;
   }
 
   animation() {
-    this.spritePositionX < this.sizeXMax - this.sizeX
-      ? (this.spritePositionX += this.sizeX + 6)
-      : (this.spritePositionX = 0);
+    if (this.jumpAutorization){
+      this.spritePositionX < this.sizeXMax - this.sizeX
+        ? (this.spritePositionX += this.sizeX + 6)
+        : (this.spritePositionX = 0);
+    }
+    this.animationDuringJumping();
+  }
+  
+  animationDuringJumping() {
+    if (!this.jumpAutorization) {
+      this.spritePositionX = this.sizeX * 7 - 10;
+    }  
+    this.direction === "left" ? this.spritePositionY = this.jumpLeft : this.spritePositionY = this.jumpRight;
   }
 
   jump() {
+    this.jumpAutorization = false;
+    this.spritePositionY === this.inicialSpritePositionY ? this.spritePositionY = this.jumpRight : this.spritePositionY = this.jumpLeft;
     this.jumpSound.play();
     this.numberOfJumps > 0
       ? (this.jumpSpeed = -this.gravity * this.humanStrength)
@@ -56,14 +74,16 @@ class Character extends AnimationDraw {
   movement(choose) {
     switch (choose) {
       case "left":
-        this.spritePositionY = this.sizeYMax * 9
+        this.jumpAutorization ? this.spritePositionY = this.sizeYMax * this.numberOfMovements : null; 
         this.inicialPositionX > 0 ? (this.inicialPositionX -= 20) : null;
+        this.direction = "left";
         break;
       case "right":
-        this.spritePositionY = this.inicialSpritePositionY;
+        this.jumpAutorization ? this.spritePositionY = this.inicialSpritePositionY : null;
         this.inicialPositionX < width * 0.85
           ? (this.inicialPositionX += 20)
           : null;
+          this.direction = "right";
         break;
     }
   }
@@ -71,9 +91,11 @@ class Character extends AnimationDraw {
   applyGravity() {
     this.inicialPositionY += this.jumpSpeed;
     this.jumpSpeed += this.gravity * 0.211;
-    this.inicialPositionY > this.inicialY
-      ? (this.inicialPositionY = this.inicialY)
-      : null;
+    if (this.inicialPositionY > this.inicialY) {
+      this.inicialPositionY = this.inicialY;
+      this.jumpAutorization = true;
+       this.direction === "left" ? this.spritePositionY = this.sizeYMax * this.numberOfMovements : this.spritePositionY = this.inicialSpritePositionY;
+    }
     this.inicialPositionY === this.inicialY ? (this.numberOfJumps = 2) : null;
   }
 

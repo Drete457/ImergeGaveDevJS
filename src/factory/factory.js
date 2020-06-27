@@ -17,6 +17,8 @@ class Factory {
     let spritePositionXCh = sizeXCh;
     let spritePositionYCh = sizeYCh * 11;
     let numberOfMovements = 9;
+    let jumpLeft = 1;
+    let jumpRight = 3;
     return new Character(
       imageCharacter,
       inicialPositionX,
@@ -29,6 +31,8 @@ class Factory {
       spritePositionYCh,
       numberOfMovements,
       jumpSound,
+      jumpLeft,
+      jumpRight,
     );
   }
 
