@@ -16,7 +16,7 @@ class Factory {
     //reference white parte of the sprite
     let spritePositionXCh = sizeXCh;
     let spritePositionYCh = sizeYCh * 11;
-    let numberOfMovements = 8;
+    let numberOfMovements = 9;
     return new Character(
       imageCharacter,
       inicialPositionX,

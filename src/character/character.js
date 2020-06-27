@@ -25,8 +25,8 @@ class Character extends AnimationDraw {
     );
 
     //the full sprite size will be use for the caracter movement
-    this.sizeXMax = this.sizeX;
-    this.sizeYMax = this.sizeY * numberOfMovements;
+    this.sizeXMax = this.sizeX * numberOfMovements;
+    this.sizeYMax = this.sizeY;
 
     this.inicialY = inicialPositionY;
     this.gravity = 9.807;
@@ -34,11 +34,13 @@ class Character extends AnimationDraw {
     this.numberOfJumps = 2;
     this.humanStrength = 3.73;
 
+    this.inicialSpritePositionY = spritePositionY;
+
     this.jumpSound = jumpSound;
   }
 
   animation() {
-    this.spritePositionX < this.sizeYMax - this.sizeX
+    this.spritePositionX < this.sizeXMax - this.sizeX
       ? (this.spritePositionX += this.sizeX + 6)
       : (this.spritePositionX = 0);
   }
@@ -54,9 +56,11 @@ class Character extends AnimationDraw {
   movement(choose) {
     switch (choose) {
       case "left":
+        this.spritePositionY = this.sizeYMax * 9
         this.inicialPositionX > 0 ? (this.inicialPositionX -= 20) : null;
         break;
       case "right":
+        this.spritePositionY = this.inicialSpritePositionY;
         this.inicialPositionX < width * 0.85
           ? (this.inicialPositionX += 20)
           : null;
