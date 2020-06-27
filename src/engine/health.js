@@ -35,8 +35,4 @@ class Health {
     this.health -= 1;
     return this.health <= 0 ? false : true;
   }
-
-  reset() {
-    this.health = 100;
-  }
 }

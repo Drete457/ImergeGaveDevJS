@@ -14,8 +14,12 @@ class GameApp {
       enemy.inicialPositionX > -enemy.characterWidth
         ? animation(enemy)
         : (enemys[enemys.indexOf(enemy)] = factory.enemy());
-      character.collision(enemy) ? this.gameOverAndLive() : animation(points);
+        gameRun ? this.collisionVerification(enemy) : null;
     });
+  }
+
+  collisionVerification(enemy) {
+    character.collision(enemy) ? this.gameOverAndLive() : animation(points);
   }
 
   gameOverAndLive() {
