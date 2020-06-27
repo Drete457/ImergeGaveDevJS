@@ -1,9 +1,12 @@
 class Reset {
   constructor() {
+    this.playMusic();
+
     factory = new Factory();
     points = new Points();
     animation = new AnimationMovement().animation;
     gameRun = false;
+
     lvl = 1;
     lvlFactory = new Lvl();
     lvl2 = true;
@@ -38,5 +41,13 @@ class Reset {
 
     gameOver = factory.gameOver();
     loop();
+  }
+
+  playMusic() {
+    if (!playSound) {
+      playSound = true;
+      playSoundFinalBoss.stop();
+      gameSound.loop()
+    }
   }
 }

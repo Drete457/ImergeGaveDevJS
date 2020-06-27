@@ -1,6 +1,8 @@
 //Sound
 let gameSound;
 let jumpSound;
+let playSound;
+let playSoundFinalBoss;
 
 //Scenario
 let background;

@@ -1,6 +1,7 @@
 function preload() {
   gameSound = loadSound("sound/begin.ogg");
   jumpSound = loadSound("sound/somPulo.mp3");
+  playSoundFinalBoss = loadSound("sound/finalbossmusic.mp3");
   background = loadImage("images/scenery/background.jpg");
   imageBat = loadImage("images/scenery/bath.png");
   imageCharacter = loadImage("images/maincaracter/warior.png");

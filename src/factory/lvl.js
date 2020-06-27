@@ -34,6 +34,12 @@ class Lvl {
         imageScenery3 = loadImage("images/scenery/weald.corridor_wall.24.png");
         speed = 8;
         break;
+      case 5:
+        nextLvlScreen = loadImage("images/scenery/finalboss.png");
+        playSound = false; 
+        gameSound.stop();
+        playSoundFinalBoss.loop();
+        speed = 2;
     }
   }
 
