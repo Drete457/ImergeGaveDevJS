@@ -30,6 +30,7 @@ function renderNextLvl(min, max) {
   lvlFactory.backGround();
   inicialScreen = new NextScreen(nextLvlScreen, 0, 0, width, height);
   health = factory.health();
+  healthBoss = factory.bossHealth();
   character = factory.character();
   scenario = factory.scenario();
   enemys = factory.enemys(min, max);

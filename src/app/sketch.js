@@ -23,7 +23,6 @@ function gameRunApp() {
     imageKnight.hide();
   } else {
     gameRun = true;
-   // gameApp = new daçsjdçasdçjaç();
-    console.log("bossfight")
+    gameApp = new GameAppBoss();
   }
 }

@@ -40,6 +40,10 @@ class Factory {
     return new Health();
   }
 
+  bossHealth() {
+    return new BossHealth();
+  }
+
   bat() {
     //enemy position and image on the screen
     let inicialPositionX = inicialEnemyX();
