@@ -36,6 +36,35 @@ class Factory {
     );
   }
 
+  bossCharacter() {
+    //character position
+    let inicialPositionX = width / 10 * 8.2 ;
+    let inicialPositionY = height - height / 3;
+    //size of the character on the screen
+    let characterWidth = width / 9;
+    let characterHeigth = height / 3;
+    //size of the character in the file
+    let sizeXCh = 58;
+    let sizeYCh = 65;
+    //reference white parte of the sprite
+    let spritePositionXCh = sizeXCh;
+    let spritePositionYCh = sizeYCh * 9;
+    let numberOfMovements = 9;
+    return new Character(
+      imageFinalBoss,
+      inicialPositionX,
+      inicialPositionY,
+      characterWidth,
+      characterHeigth,
+      sizeXCh,
+      sizeYCh,
+      spritePositionXCh,
+      spritePositionYCh,
+      numberOfMovements,
+    );
+  }
+  
+
   health() {
     return new Health();
   }

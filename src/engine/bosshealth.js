@@ -29,7 +29,7 @@ class BossHealth {
       noStroke();
       // Get fraction 0->1 and multiply it by width of bar
       rect(width / 10 * 9.8, this.inicialY / 0.6, this.drawWidth, height / 15);
-      this.reduce();
+      
     }
   
     reduce() {

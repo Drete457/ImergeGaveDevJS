@@ -29,6 +29,8 @@ let character;
 let imageBubble;
 let imageTroll;
 let imageFlyBubble;
+let imageFinalBoss;
+let bossCharacter;
 let spritePositionX;
 let spritePositionY;
 

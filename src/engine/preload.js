@@ -8,6 +8,7 @@ function preload() {
   imageBubble = loadImage("images/enemy/gotinha.png");
   imageTroll = loadImage("images/enemy/troll.png");
   imageFlyBubble = loadImage("images/enemy/gotinha-voadora.png");
+  imageFinalBoss = loadImage("images/enemy/finalboss.png");
   imageGameOver = loadImage("images/assets/game-over.png");
   imageInicialScreen = loadImage("images/scenery/inicialscreen.jpg");
   font = loadFont("images/assets/fonteTelaInicial.otf");

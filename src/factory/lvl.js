@@ -37,12 +37,13 @@ class Lvl {
       case 5:
         nextLvlScreen = loadImage("images/scenery/finalboss.png");
         imageScenery = nextLvlScreen;
-        playSound = false; 
+        playSound = false;
         gameSound.stop();
         playSoundFinalBoss.loop();
         playSoundFinalBoss.setVolume(0.1);
         bossFight = true;
         speed = 0;
+        bossCharacter = factory.bossCharacter();
     }
   }
 
