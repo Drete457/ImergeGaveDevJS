@@ -4,7 +4,7 @@ function setup() {
   playSound = true;
   gameSound.loop()
   new Reset();
-  gameApp = new GameApp();
+  
 }
 
 function keyPressed() {
@@ -18,6 +18,12 @@ function draw() {
 }
 
 function gameRunApp() {
-  gameRun = true;
-  imageKnight.hide();
+  if (!bossFight) {
+    gameRun = true;
+    imageKnight.hide();
+  } else {
+    gameRun = true;
+   // gameApp = new daçsjdçasdçjaç();
+    console.log("bossfight")
+  }
 }

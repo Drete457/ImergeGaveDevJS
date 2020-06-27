@@ -13,10 +13,12 @@ function nextlvl() {
   }
   if (points.points > 3 && lvl4) {
     lvl4 = false;
+    lvl5 = true;
     lvl = 4;
     this.renderNextLvl(8, 10);
   }
-  if (points.points > 4 && !lvl4) {
+  if (points.points > 4 && lvl5) {
+    lvl5 = false;
     lvl = 5;
     this.renderNextLvl(1, 1);
   }

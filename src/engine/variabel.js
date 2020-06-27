@@ -41,6 +41,7 @@ let lvl;
 let lvl2;
 let lvl3;
 let lvl4;
+let lvl5;
 
 //UI of the game
 let gameRun;
@@ -57,4 +58,6 @@ let gameOver;
 let font;
 let points;
 let health;
+let healthBoss;
+let bossFight;
 let enemys = [];

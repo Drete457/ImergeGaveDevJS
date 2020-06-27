@@ -2,20 +2,30 @@ class Reset {
   constructor() {
     this.playMusic();
 
-    factory = new Factory();
-    points = new Points();
-    animation = new AnimationMovement().animation;
-    gameRun = false;
-
-    lvl = 1;
-    lvlFactory = new Lvl();
-    lvl2 = true;
-    lvl3 = false;
-    lvl4 = false;
-    health = factory.health();
+    
+    this.lvlAutorization();
 
     spritePositionX = 0;
     spritePositionY = 0;
+    this.inicialization();
+
+    inicialEnemyX = () => {
+      return Math.floor(Math.random() * (width + 100 + width) + width + 10);
+    };
+
+    textFont(font);
+    textAlign(CENTER, CENTER);
+    
+    this.callFactory();
+    
+    loop();
+  }
+
+  inicialization() {
+    factory = new Factory();
+    points = new Points();
+    animation = new AnimationMovement().animation;
+    lvlFactory = new Lvl();
     inicialScreen = new InicialScreen(
       imageInicialScreen,
       spritePositionX,
@@ -24,23 +34,17 @@ class Reset {
       height,
       imageKnight,
     );
+    gameApp = new GameApp();
+  }
 
-    inicialEnemyX = () => {
-      return Math.floor(Math.random() * (width + 100 + width) + width + 10);
-    };
-
-    textFont(font);
-    textAlign(CENTER, CENTER);
-
-    lvlFactory.lvl(lvl);
-    scenario = factory.scenario();
-
-    character = factory.character();
-
-    enemys = factory.enemys(3, 5);
-
-    gameOver = factory.gameOver();
-    loop();
+  lvlAutorization() {
+    gameRun = false;
+    lvl = 1;
+    lvl2 = true;
+    lvl3 = false;
+    lvl4 = false;
+    lvl5 = false;
+    bossFight = false;
   }
 
   playMusic() {
@@ -49,5 +53,17 @@ class Reset {
       playSoundFinalBoss.stop();
       gameSound.loop()
     }
+  }
+
+  callFactory() {
+    health = factory.health();
+    lvlFactory.lvl(lvl);
+    scenario = factory.scenario();
+
+    character = factory.character();
+
+    enemys = factory.enemys(3, 5);
+
+    gameOver = factory.gameOver();
   }
 }
