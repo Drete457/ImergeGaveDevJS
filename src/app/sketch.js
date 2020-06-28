@@ -4,7 +4,6 @@ function setup() {
   playSound = true;
   gameSound.loop()
   new Reset();
-  
 }
 
 function keyPressed() {

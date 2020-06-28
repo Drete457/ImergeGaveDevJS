@@ -5,7 +5,7 @@ class GameAppBoss {
       keyIsDown(RIGHT_ARROW) ? character.movement("right") : null;
   
       animation(scenario);
-      animation(health);
+     animation(health);
         animation(healthBoss);
         animation(character);
         animation(bossCharacter);
