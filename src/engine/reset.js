@@ -2,7 +2,6 @@ class Reset {
   constructor() {
     this.playMusic();
 
-    
     this.lvlAutorization();
 
     spritePositionX = 0;
@@ -15,9 +14,9 @@ class Reset {
 
     textFont(font);
     textAlign(CENTER, CENTER);
-    
+
     this.callFactory();
-    
+
     loop();
   }
 
@@ -54,7 +53,7 @@ class Reset {
     if (!playSound) {
       playSound = true;
       playSoundFinalBoss.stop();
-      gameSound.loop()
+      gameSound.loop();
     }
   }
 

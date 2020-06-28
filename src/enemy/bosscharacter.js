@@ -27,15 +27,17 @@ class BossCharacter extends AnimationDraw {
     this.sizeXMax = sizeX * numberOfMovements;
     this.sizeYMax = sizeY;
     this.numberOfMovements = numberOfMovements;
-  //  this.inicialY = inicialPositionY;
+    //  this.inicialY = inicialPositionY;
 
     this.inicialSpritePositionY = spritePositionY;
 
-   this.direction;
+    this.direction;
   }
 
   animation() {
-    this.spritePositionX < this.sizeXMax - this.sizeX ? this.spritePositionX += this.sizeX : this.spritePositionX = 0;
+    this.spritePositionX < this.sizeXMax - this.sizeX
+      ? (this.spritePositionX += this.sizeX)
+      : (this.spritePositionX = 0);
   }
 
   playerPositionVerification(player) {
@@ -47,14 +49,13 @@ class BossCharacter extends AnimationDraw {
       this.spritePositionY = this.inicialSpritePositionY;
       this.direction = "left";
       this.movement("left");
-     }
-    
+    }
   }
 
   movement(choose) {
     switch (choose) {
       case "left":
-      this.inicialPositionX -= 5;
+        this.inicialPositionX -= 5;
         break;
       case "right":
         this.inicialPositionX += 5;

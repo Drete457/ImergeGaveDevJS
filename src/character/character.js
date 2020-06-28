@@ -57,7 +57,7 @@ class Character extends AnimationDraw {
       this.resetImage();
     }
 
-   if (this.jumpAutorization && this.attaksRemaning <= 0) {
+    if (this.jumpAutorization && this.attaksRemaning <= 0) {
       this.spritePositionX < this.sizeXMax - this.sizeX
         ? (this.spritePositionX += this.sizeX)
         : (this.spritePositionX = 0);
@@ -70,9 +70,9 @@ class Character extends AnimationDraw {
     if (!this.jumpAutorization) {
       this.spritePositionX = this.sizeX * 6;
       this.direction === "left"
-      ? (this.spritePositionY = this.jumpLeft)
-      : (this.spritePositionY = this.jumpRight);
-    } 
+        ? (this.spritePositionY = this.jumpLeft)
+        : (this.spritePositionY = this.jumpRight);
+    }
   }
 
   jump() {
@@ -194,21 +194,27 @@ class Character extends AnimationDraw {
   }
 
   attack() {
-    this.attaksRemaning <= 0 ? this.attaksRemaning = this.numberOfAttack : null;
-    this.direction === "left" && this.jumpAutorization ? this.attackLeft() : null;
-    this.direction === "right" && this.jumpAutorization ? this.attackRight() : null;
+    this.attaksRemaning <= 0
+      ? (this.attaksRemaning = this.numberOfAttack)
+      : null;
+    this.direction === "left" && this.jumpAutorization
+      ? this.attackLeft()
+      : null;
+    this.direction === "right" && this.jumpAutorization
+      ? this.attackRight()
+      : null;
   }
 
   attackLeft() {
     this.image = imageCharacterWeapon;
     this.spritePositionX = 0;
-    this.spritePositionY = this.sizeYMax * 13; 
+    this.spritePositionY = this.sizeYMax * 13;
   }
 
   attackRight() {
     this.image = imageCharacterWeapon;
     this.spritePositionX = 0;
-    this.spritePositionY = this.sizeYMax * 15; 
+    this.spritePositionY = this.sizeYMax * 15;
   }
 
   attackAnimation() {
@@ -217,8 +223,10 @@ class Character extends AnimationDraw {
 
   resetImage() {
     this.image = imageCharacter;
-    
+
     this.attackBegin = 0;
-    this.direction === "left" && this.jumpAutorization ? this.spritePositionY = this.sizeYMax * this.numberOfMovements : this.spritePositionY = this.inicialSpritePositionY;
+    this.direction === "left" && this.jumpAutorization
+      ? (this.spritePositionY = this.sizeYMax * this.numberOfMovements)
+      : (this.spritePositionY = this.inicialSpritePositionY);
   }
 }

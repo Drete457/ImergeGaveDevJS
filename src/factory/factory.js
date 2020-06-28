@@ -40,7 +40,7 @@ class Factory {
 
   bossCharacter() {
     //character position
-    let inicialPositionX = width / 10 * 8;
+    let inicialPositionX = (width / 10) * 8;
     let inicialPositionY = height - height / 2.6;
     //size of the character on the screen
     let characterWidth = width / 9;
@@ -65,7 +65,6 @@ class Factory {
       numberOfMovements,
     );
   }
-  
 
   health() {
     return new Health();
@@ -82,7 +81,7 @@ class Factory {
       Math.random() * (height / 2 - height / 11) + height / 11,
     );
     //size of the enemy on the screen
-    let characterWidth =  width / 8.75;
+    let characterWidth = width / 8.75;
     let characterHeigth = height / 8.15;
     //size of the enemy on the sprite
     let sizeXBt = 160;
@@ -104,7 +103,7 @@ class Factory {
 
   bubble() {
     //size of the enemy on the screen
-    let characterWidth =  width / 13.46;
+    let characterWidth = width / 13.46;
     let characterHeigth = height / 9.41;
     //size of the enemy on the sprite
     let sizeXBb = 104;
@@ -131,7 +130,7 @@ class Factory {
 
   troll() {
     //size of the enemy on the screen
-    let characterWidth =  width / 4.66;
+    let characterWidth = width / 4.66;
     let characterHeigth = height / 3.26;
     //size of the enemy on the sprite
     let sizeXTl = 400;
@@ -158,7 +157,7 @@ class Factory {
 
   flybubble() {
     //size of the enemy on the screen
-    let characterWidth =  width / 7;
+    let characterWidth = width / 7;
     let characterHeigth = height / 6.52;
     //size of the enemy on the sprite
     let sizeXBb = 200;
@@ -185,7 +184,7 @@ class Factory {
 
   powerUp() {
     //size of the enemy on the screen
-    let characterWidth =  width / 17.5;
+    let characterWidth = width / 17.5;
     let characterHeigth = height / 12.23;
     //size of the enemy on the sprite
     let powerSpeed = speed;
@@ -201,15 +200,15 @@ class Factory {
       powerSpeed,
     );
   }
-  
+
   powerLive() {
     //size of the enemy on the screen
-    let characterWidth =  width / 17.5;
+    let characterWidth = width / 17.5;
     let characterHeigth = height / 12.23;
     //size of the enemy on the sprite
     let powerSpeed = speed;
     //enemy position and image on the screen
-    let inicialPositionX = random(0, width / 10 * 8);
+    let inicialPositionX = random(0, (width / 10) * 8);
     let inicialPositionY = height - height / 2;
     return new PowerLive(
       imagePowerLive,

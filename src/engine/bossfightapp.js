@@ -7,7 +7,7 @@ class GameAppBoss {
 
     this.lives();
 
-    this.characters()
+    this.characters();
 
     gameRun ? this.collisionVerification(bossCharacter) : null;
 
@@ -18,14 +18,14 @@ class GameAppBoss {
 
   endOfTheGame() {
     points.finish();
-    nextlvl()
+    nextlvl();
   }
 
   createLives() {
     let randomLive = random(1, 100);
     if (randomLive > 99 && !powerLiveCatch) {
       powerLiveCatch = true;
-        live = factory.live(); 
+      live = factory.live();
     }
 
     if (live != "" && powerLiveCatch) {

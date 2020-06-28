@@ -32,7 +32,7 @@ class BossHealth {
   }
 
   reduce() {
-    this.health -= 1;
+    this.health -= 0.8;
   }
 
   dead() {

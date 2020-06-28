@@ -21,7 +21,6 @@ class InicialScreen extends AnimationDraw {
   }
 
   animation() {
-
     textSize(height / 8.15);
     fill(350);
 
@@ -38,7 +37,7 @@ class InicialScreen extends AnimationDraw {
       width / 2,
       height / 1.8,
     );
-   
+
     text(
       "CONTROLS:\n SPACE TO JUMP\n ARROW LEFT TO WALK LEFT\n ARROW RIGHT TO WALK RIGHT",
       width / 2,
@@ -47,7 +46,7 @@ class InicialScreen extends AnimationDraw {
 
     if (this.showText) {
       this.showText = false;
-     
+
       text("PRESS BUTTON 'S' TO START THE GAME", width / 2, height / 1.11);
       this.show();
     } else {

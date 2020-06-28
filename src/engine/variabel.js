@@ -50,6 +50,7 @@ let lvl4;
 let lvl5;
 
 //UI of the game
+let finalScore;
 let gameRun;
 let imageInicialScreen;
 let inicialScreen;

@@ -44,13 +44,13 @@ class Lvl {
         bossFight = true;
         speed = 0;
         bossCharacter = factory.bossCharacter();
-        case 6:
+        break;
+      case 6:
         bossFight = false;
         playSoundFinalBoss.stop();
         nextLvlScreen = loadImage("images/scenery/weeding.JPG");
-        
-        gameApp = new GameApp();
-        points.points = 0;
+        finalScore = parseInt(points.points);
+        new Reset();
         break;
     }
   }
