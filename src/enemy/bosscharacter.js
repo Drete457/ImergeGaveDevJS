@@ -35,35 +35,27 @@ class BossCharacter extends AnimationDraw {
   }
 
   animation() {
-     this.spritePositionX < this.sizeXMax - this.sizeX
-          ? (this.spritePositionX += this.sizeX + 6)
-          : (this.spritePositionX = 0);
-    //  this.jump ? this.inicialSpritePositionY = this.inicialY : this.spritePositionY -= 2;
+    this.spritePositionX < this.sizeXMax - this.sizeX ? this.spritePositionX += this.sizeX + 6 : this.spritePositionX = 0;
   }
 
   playerPositionVerification(player) {
-      player.inicialPositionX > this.inicialPositionX
-      ? (this.spritePositionY = this.sizeYMax * 11 )
-      : (this.spritePositionY = this.inicialSpritePositionY);
+    if (player.inicialPositionX > this.inicialPositionX) {
+      this.spritePositionY = this.sizeYMax * 11;
+      this.movement("right");
+    } else {
+      this.spritePositionY = this.inicialSpritePositionY;
+      this.movement("left");
+     }
+    
   }
 
   movement(choose) {
     switch (choose) {
       case "left":
-        this.jumpAutorization
-          ? (this.spritePositionY = this.sizeYMax * this.numberOfMovements)
-          : null;
-        this.inicialPositionX > 0 ? (this.inicialPositionX -= 20) : null;
-        this.direction = "left";
+      this.inicialPositionX -= 5;
         break;
       case "right":
-        this.jumpAutorization
-          ? (this.spritePositionY = this.inicialSpritePositionY)
-          : null;
-        this.inicialPositionX < width * 0.85
-          ? (this.inicialPositionX += 20)
-          : null;
-        this.direction = "right";
+        this.inicialPositionX += 5;
         break;
     }
   }

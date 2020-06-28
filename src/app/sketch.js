@@ -10,6 +10,7 @@ function keyPressed() {
   key === " " ? character.jump() : null;
   key === "r" ? new Reset() : null;
   key === "s" ? gameRunApp() : null;
+  key === "a" && bossFight ? character.attack() : null;
 }
 
 function draw() {

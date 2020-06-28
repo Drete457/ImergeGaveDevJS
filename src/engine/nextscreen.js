@@ -15,9 +15,13 @@ class NextScreen extends AnimationDraw {
     );
     this.showText = false;
     this.interval = 0;
+    this.string;
   }
 
   animation() {
+
+    bossFight ? this.string = "PRESS 'A' TO ATTACK \n PRESS BUTTON 'S' TO START THE LEVEL" : this.string = "PRESS BUTTON 'S' TO START THE GAME";
+    
     fill(350);
     textSize(height / 8.15);
     this.showText ? text("WEDDING DUNGEONS", width / 2, height / 5.9) : null;
@@ -30,7 +34,7 @@ class NextScreen extends AnimationDraw {
     if (this.showText) {
       this.showText = false;
       text(
-        "PRESS BUTTON 'S' TO CONTINUE TO THE NEXT LEVEL",
+        this.string,
         width / 2,
         height / 1.11,
       );

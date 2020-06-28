@@ -133,4 +133,8 @@ class Character extends AnimationDraw {
       enemy.characterHeight * precision,
     );
   }
+
+  attack() {
+    console.log("atacar")
+  }
 }
