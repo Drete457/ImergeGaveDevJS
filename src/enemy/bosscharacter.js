@@ -31,7 +31,7 @@ class BossCharacter extends AnimationDraw {
 
     this.inicialSpritePositionY = spritePositionY;
 
-    this.direction;
+   this.direction;
   }
 
   animation() {
@@ -41,9 +41,11 @@ class BossCharacter extends AnimationDraw {
   playerPositionVerification(player) {
     if (player.inicialPositionX > this.inicialPositionX) {
       this.spritePositionY = this.sizeYMax * 11;
+      this.direction = "right";
       this.movement("right");
     } else {
       this.spritePositionY = this.inicialSpritePositionY;
+      this.direction = "left";
       this.movement("left");
      }
     

@@ -7,11 +7,11 @@ class GameAppBoss {
 
     this.lives();
 
-    animation(character);
-    animationBoss(bossCharacter);
+   // animation(character);
+  //  animationBoss(bossCharacter);
     
 
-    gameRun ? this.collisionVerification(bossCharacter) : null
+   // gameRun ? this.collisionVerification(bossCharacter) : null
 
     //under construction
   /*  textSize(width / 10);

@@ -21,7 +21,6 @@ class InicialScreen extends AnimationDraw {
   }
 
   animation() {
-    bossFight ? this.string = "PRESS 'A' TO ATTACK \n PRESS BUTTON 'S' TO START THE LEVEL" : this.string = "PRESS BUTTON 'S' TO START THE GAME";
 
     textSize(height / 8.15);
     fill(350);
@@ -49,7 +48,7 @@ class InicialScreen extends AnimationDraw {
     if (this.showText) {
       this.showText = false;
      
-      text(this.string, width / 2, height / 1.11);
+      text("PRESS BUTTON 'S' TO START THE GAME", width / 2, height / 1.11);
       this.show();
     } else {
       this.showText = true;

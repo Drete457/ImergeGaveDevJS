@@ -6,13 +6,13 @@ class Factory {
   character() {
     //character position
     let inicialPositionX = width / 9.3;
-    let inicialPositionY = height - height / 3;
+    let inicialPositionY = height - height / 2.6;
     //size of the character on the screen
     let characterWidth = width / 9;
     let characterHeigth = height / 3;
     //size of the character in the file
-    let sizeXCh = 58;
-    let sizeYCh = 65;
+    let sizeXCh = 64;
+    let sizeYCh = 64;
     //reference white parte of the sprite
     let spritePositionXCh = sizeXCh;
     let spritePositionYCh = sizeYCh * 11;
@@ -44,7 +44,7 @@ class Factory {
     let characterWidth = width / 9;
     let characterHeigth = height / 3;
     //size of the character in the file
-    let sizeXCh = 58;
+    let sizeXCh = 65;
     let sizeYCh = 65;
     //reference white parte of the sprite
     let spritePositionXCh = sizeXCh;

@@ -1,11 +1,11 @@
 function nextlvl() {
-  if (points.points > 1 && lvl2) {
+ if (points.points > 100000 && lvl2) {
     lvl2 = false;
     lvl3 = true;
     lvl = 2;
     this.renderNextLvl(5, 7);
   }
-  if (points.points > 2 && lvl3) {
+ /* if (points.points > 2 && lvl3) {
     lvl3 = false;
     lvl4 = true;
     lvl = 3;
@@ -17,11 +17,13 @@ function nextlvl() {
     lvl = 4;
     this.renderNextLvl(8, 10);
   }
-  if (points.points > 4 && lvl5) {
+  //apagar depois
+/*  lvl5 = true;
+  if (points.points > 1 && lvl5) {
     lvl5 = false;
     lvl = 5;
     this.renderNextLvl(1, 1);
-  }
+  }*/
 }
 
 function renderNextLvl(min, max) {
