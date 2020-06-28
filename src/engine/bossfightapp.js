@@ -13,7 +13,12 @@ class GameAppBoss {
 
     this.createLives();
 
-   // nextlvl();
+    !healthBoss.dead() ? this.endOfTheGame() : null;
+  }
+
+  endOfTheGame() {
+    points.finish();
+    nextlvl()
   }
 
   createLives() {

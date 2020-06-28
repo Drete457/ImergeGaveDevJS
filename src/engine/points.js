@@ -16,4 +16,9 @@ class Points {
         fill(255);
         text("SCORE: " + parseInt(this.points), width - width / 10*2, height / 10);
     }
+
+    finish() {
+        console.log("entrou")
+        this.points += 2000;
+    }
 }

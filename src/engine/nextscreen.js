@@ -28,7 +28,7 @@ class NextScreen extends AnimationDraw {
 
     textSize(height / 24.5);
     fill(350);
-
+    
     text(this.lvlText(), width / 2, height / 1.8);
 
     if (this.showText) {
@@ -67,6 +67,9 @@ class NextScreen extends AnimationDraw {
       case 5:
         return "YOU'VE REACHED THE END OF THE DUNGEON. \n YOU'VE BEEN TO THIS DAY \n THE BRAVEST KNIGHT EVER BEEN HERE. \n LEGENDS TELL THAT THERE IS AN \n IMMORTAL SKELETON \n AND WHOEVER MANAGES TO KILL IT \n GAINS IS IMMORTALITY. \n ARE YOU GOING TO TRY YOUR LUCK ?"
         break;
+      case 6:
+        return "YOU GOT THE PRINCESS AND THE ETERNAL LIFE. CONGRATULATIONS";
+         break;
     }
   }
 }
