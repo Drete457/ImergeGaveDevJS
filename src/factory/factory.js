@@ -201,6 +201,25 @@ class Factory {
       powerSpeed,
     );
   }
+  
+  powerLive() {
+    //size of the enemy on the screen
+    let characterWidth =  width / 17.5;
+    let characterHeigth = height / 12.23;
+    //size of the enemy on the sprite
+    let powerSpeed = speed;
+    //enemy position and image on the screen
+    let inicialPositionX = random(0, width / 10 * 8);
+    let inicialPositionY = height - height / 2;
+    return new PowerLive(
+      imagePowerLive,
+      inicialPositionX,
+      inicialPositionY,
+      characterWidth,
+      characterHeigth,
+      powerSpeed,
+    );
+  }
 
   gameOver() {
     return new GameOver(imageGameOver);
@@ -234,5 +253,9 @@ class Factory {
         return this.powerUp();
         break;
     }
+  }
+
+  live() {
+    return this.powerLive();
   }
 }

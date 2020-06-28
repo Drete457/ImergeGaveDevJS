@@ -25,6 +25,8 @@ let factory;
 let imageCharacter;
 let imageCharacterWeapon;
 let character;
+let live;
+let powerLiveCatch;
 
 //Enemy
 let imageBubble;
@@ -54,6 +56,7 @@ let inicialScreen;
 let nextLvlScreen;
 let imageKnight;
 let imagePowerUP;
+let imagePowerLive;
 let reset;
 let gameApp;
 let inicialEnemyX;

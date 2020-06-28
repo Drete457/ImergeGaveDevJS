@@ -36,6 +36,8 @@ class Reset {
       imageKnight,
     );
     gameApp = new GameApp();
+    powerLiveCatch = false;
+    live = "";
   }
 
   lvlAutorization() {

@@ -156,6 +156,43 @@ class Character extends AnimationDraw {
     );
   }
 
+  collisionBoss(enemy) {
+    const precision = 0.7;
+
+    if (enemy instanceof PowerLive) {
+      if (
+        collideRectRect(
+          this.inicialPositionX,
+          this.inicialPositionY,
+          this.characterWidth,
+          this.characterHeight,
+          enemy.inicialPositionX,
+          enemy.inicialPositionY,
+          enemy.characterWidth,
+          enemy.characterHeight,
+        )
+      ) {
+        enemy.inicialPositionX = -width;
+        health.add();
+        powerLiveCatch = false;
+      }
+      return false;
+    }
+
+    let result = collideRectRect(
+      this.inicialPositionX + width / 25,
+      this.inicialPositionY,
+      this.characterWidth - width / 15,
+      this.characterHeight * precision,
+      enemy.inicialPositionX + enemy.sizeX / 5,
+      enemy.inicialPositionY + enemy.sizeY / 8,
+      enemy.characterWidth * precision,
+      enemy.characterHeight * precision,
+    );
+    this.attaksRemaning > 0 && result ? healthBoss.reduce() : null;
+    return result;
+  }
+
   attack() {
     this.attaksRemaning <= 0 ? this.attaksRemaning = this.numberOfAttack : null;
     this.direction === "left" && this.jumpAutorization ? this.attackLeft() : null;
@@ -175,7 +212,7 @@ class Character extends AnimationDraw {
   }
 
   attackAnimation() {
-   this.spritePositionX += this.sizeX -1
+    this.spritePositionX += this.sizeX;
   }
 
   resetImage() {

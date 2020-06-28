@@ -7,37 +7,39 @@ class GameAppBoss {
 
     this.lives();
 
-   animation(character);
-  // animationBoss(bossCharacter);
-    
+    this.characters()
 
-   // gameRun ? this.collisionVerification(bossCharacter) : null
+    gameRun ? this.collisionVerification(bossCharacter) : null;
 
-    //under construction
-  /*  textSize(width / 10);
-    text("WARNING", (width / 10) * 4.55, (height / 10) * 3.1);
-    text("UNDER CONSTRUCTION", (width / 10) * 4.55, (height / 10) * 4.5);
-    // nextlvl()
+    this.createLives();
 
-    /*   enemys.map((enemy) => {
-        enemy.inicialPositionX > -enemy.characterWidth
-          ? animation(enemy)
-          : (enemys[enemys.indexOf(enemy)] = factory.enemy());
-          gameRun ? this.collisionVerification(enemy) : null;
-      });*/
+   // nextlvl();
+  }
+
+  createLives() {
+    let randomLive = random(1, 100);
+    if (randomLive > 99 && !powerLiveCatch) {
+      powerLiveCatch = true;
+        live = factory.live(); 
+    }
+
+    if (live != "" && powerLiveCatch) {
+      animation(live);
+      this.collisionVerification(live);
+    }
   }
 
   collisionVerification(enemy) {
-    character.collision(enemy) ? this.gameOverAndLive() : null;
+    character.collisionBoss(enemy) ? this.gameOverAndLive() : null;
   }
 
   gameOverAndLive() {
     !health.reduce() ? animation(gameOver) : null;
   }
 
-  /*  bossLiveReduce() {
-        
-    }*/
+  bossLiveReduce() {
+    healthBoss.reduce();
+  }
 
   scenery() {
     lvlFactory.backGround();
@@ -48,5 +50,9 @@ class GameAppBoss {
     animation(health);
     animation(healthBoss);
   }
- 
+
+  characters() {
+    animation(character);
+    animationBoss(bossCharacter);
+  }
 }

@@ -14,6 +14,7 @@ function preload() {
   imageInicialScreen = loadImage("images/scenery/inicialscreen.jpg");
   font = loadFont("images/assets/fonteTelaInicial.otf");
   imagePowerUp = loadImage("images/scenery/power.png");
+  imagePowerLive = loadImage("images/scenery/powerlive.png");
   imageKnight = createImg(
     "images/maincaracter/animation.gif",
     "images/maincaracter/animation.gif",

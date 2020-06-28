@@ -35,4 +35,8 @@ class Health {
     this.health -= 1;
     return this.health <= 0 ? false : true;
   }
+
+  add() {
+    this.health <= 80 ? this.health += 20 : null;
+  }
 }

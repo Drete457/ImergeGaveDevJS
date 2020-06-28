@@ -24,6 +24,9 @@ function nextlvl() {
     lvl = 5;
     this.renderNextLvl(1, 1);
   }
+  if (points.points > 7000) {
+    //
+  }
 }
 
 function renderNextLvl(min, max) {
