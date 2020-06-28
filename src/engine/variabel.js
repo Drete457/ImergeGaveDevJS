@@ -36,6 +36,7 @@ let spritePositionY;
 
 //control the animation for all enemy's and main character
 let animation;
+let animationBoss;
 
 //lvl
 let lvlFactory;

@@ -28,7 +28,7 @@ class Health {
     // Draw bar
     noStroke();
     // Get fraction 0->1 and multiply it by width of bar
-    rect((width / 10) * 1.6, this.inicialY / 1.4, this.drawWidth, height / 15);
+    rect((width / 10) * 1.66, this.inicialY / 1.2, this.drawWidth, height / 15);
   }
 
   reduce() {

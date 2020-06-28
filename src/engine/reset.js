@@ -25,6 +25,7 @@ class Reset {
     factory = new Factory();
     points = new Points();
     animation = new AnimationMovement().animation;
+    animationBoss = new AnimationMovement().animationBoss;
     lvlFactory = new Lvl();
     inicialScreen = new InicialScreen(
       imageInicialScreen,

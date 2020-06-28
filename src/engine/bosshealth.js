@@ -2,7 +2,7 @@ class BossHealth {
     constructor() {
       this.health = 100;
       this.maxHealth = 100;
-      this.rectWidth = (height / 10) * 7;
+      this.rectWidth = (height / 10) * 14;
       this.drawWidth;
       this.inicialY = height / 10;
     }
@@ -28,7 +28,7 @@ class BossHealth {
     // Draw bar
       noStroke();
       // Get fraction 0->1 and multiply it by width of bar
-      rect(width / 10 * 8.3, this.inicialY / 1.4, this.drawWidth, height / 15);
+      rect(width / 10 * 9.6, this.inicialY / 0.6, this.drawWidth, height / 15);
       
     }
   

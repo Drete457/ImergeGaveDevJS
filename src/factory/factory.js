@@ -38,7 +38,7 @@ class Factory {
 
   bossCharacter() {
     //character position
-    let inicialPositionX = width / 10 * 8.2 ;
+    let inicialPositionX = width / 10 * 8;
     let inicialPositionY = height - height / 3;
     //size of the character on the screen
     let characterWidth = width / 9;
@@ -50,7 +50,7 @@ class Factory {
     let spritePositionXCh = sizeXCh;
     let spritePositionYCh = sizeYCh * 9;
     let numberOfMovements = 9;
-    return new Character(
+    return new BossCharacter(
       imageFinalBoss,
       inicialPositionX,
       inicialPositionY,
