@@ -1,6 +1,6 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(10);
+  frameRate(5);
   playSound = true;
   gameSound.loop()
   new Reset();

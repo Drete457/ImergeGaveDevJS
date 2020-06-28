@@ -23,6 +23,7 @@ let factory;
 
 //Caracter
 let imageCharacter;
+let imageCharacterWeapon;
 let character;
 
 //Enemy

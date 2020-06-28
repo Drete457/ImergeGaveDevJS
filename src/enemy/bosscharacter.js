@@ -35,7 +35,7 @@ class BossCharacter extends AnimationDraw {
   }
 
   animation() {
-    this.spritePositionX < this.sizeXMax - this.sizeX ? this.spritePositionX += this.sizeX + 6 : this.spritePositionX = 0;
+    this.spritePositionX < this.sizeXMax - this.sizeX ? this.spritePositionX += this.sizeX : this.spritePositionX = 0;
   }
 
   playerPositionVerification(player) {

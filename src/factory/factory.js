@@ -9,7 +9,7 @@ class Factory {
     let inicialPositionY = height - height / 2.6;
     //size of the character on the screen
     let characterWidth = width / 9;
-    let characterHeigth = height / 3;
+    let characterHeight = height / 3;
     //size of the character in the file
     let sizeXCh = 64;
     let sizeYCh = 64;
@@ -19,12 +19,13 @@ class Factory {
     let numberOfMovements = 9;
     let jumpLeft = 1;
     let jumpRight = 3;
+    let numberOfAttack = 6;
     return new Character(
       imageCharacter,
       inicialPositionX,
       inicialPositionY,
       characterWidth,
-      characterHeigth,
+      characterHeight,
       sizeXCh,
       sizeYCh,
       spritePositionXCh,
@@ -33,19 +34,20 @@ class Factory {
       jumpSound,
       jumpLeft,
       jumpRight,
+      numberOfAttack,
     );
   }
 
   bossCharacter() {
     //character position
     let inicialPositionX = width / 10 * 8;
-    let inicialPositionY = height - height / 3;
+    let inicialPositionY = height - height / 2.6;
     //size of the character on the screen
     let characterWidth = width / 9;
     let characterHeigth = height / 3;
     //size of the character in the file
-    let sizeXCh = 65;
-    let sizeYCh = 65;
+    let sizeXCh = 64;
+    let sizeYCh = 64;
     //reference white parte of the sprite
     let spritePositionXCh = sizeXCh;
     let spritePositionYCh = sizeYCh * 9;

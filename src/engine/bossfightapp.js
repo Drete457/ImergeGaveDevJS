@@ -7,8 +7,8 @@ class GameAppBoss {
 
     this.lives();
 
-   // animation(character);
-  //  animationBoss(bossCharacter);
+   animation(character);
+  // animationBoss(bossCharacter);
     
 
    // gameRun ? this.collisionVerification(bossCharacter) : null

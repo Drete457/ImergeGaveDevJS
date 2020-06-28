@@ -13,6 +13,7 @@ class Character extends AnimationDraw {
     jumpSound,
     jumpLeft,
     jumpRight,
+    numberOfAttack,
   ) {
     super(
       image,
@@ -36,31 +37,42 @@ class Character extends AnimationDraw {
     this.numberOfJumps = 2;
     this.humanStrength = 3.73;
 
+    this.originalSizeX = sizeX;
     this.inicialSpritePositionY = spritePositionY;
 
-    this.direction;
+    this.direction = "right";
     this.jumpLeft = sizeX * jumpLeft;
     this.jumpRight = sizeX * jumpRight;
     this.jumpAutorization = true;
     this.jumpSound = jumpSound;
+    this.numberOfAttack = numberOfAttack;
+    this.attaksRemaning = 0;
   }
 
   animation() {
-    if (this.jumpAutorization) {
+    if (this.attaksRemaning > 0) {
+      this.attaksRemaning--;
+      this.attackAnimation();
+    } else {
+      this.resetImage();
+    }
+
+   if (this.jumpAutorization && this.attaksRemaning <= 0) {
       this.spritePositionX < this.sizeXMax - this.sizeX
         ? (this.spritePositionX += this.sizeX)
         : (this.spritePositionX = 0);
     }
+
     this.animationDuringJumping();
   }
 
   animationDuringJumping() {
     if (!this.jumpAutorization) {
       this.spritePositionX = this.sizeX * 6;
-    }
-    this.direction === "left"
+      this.direction === "left"
       ? (this.spritePositionY = this.jumpLeft)
       : (this.spritePositionY = this.jumpRight);
+    } 
   }
 
   jump() {
@@ -145,30 +157,31 @@ class Character extends AnimationDraw {
   }
 
   attack() {
-    this.direction === "left" ? this.attackLeft() : this.attackRight();
+    this.attaksRemaning <= 0 ? this.attaksRemaning = this.numberOfAttack : null;
+    this.direction === "left" && this.jumpAutorization ? this.attackLeft() : null;
+    this.direction === "right" && this.jumpAutorization ? this.attackRight() : null;
   }
 
   attackLeft() {
-    let spriteWidthAttack = 200;
-    let spriteHeightAttack = 107;
-    console.log("left");
-    for (let i = 0; i <= 6; i++) {
-      image(
-        this.image,
-        this.inicialPositionX,
-        this.inicialPositionY,
-        this.characterWidth,
-        this.characterHeight,
-        spriteWidthAttack += 200,
-        spriteHeightAttack * 13,
-        spriteWidthAttack,
-        spriteHeightAttack,
-      );
-    }
-    noLoop()
+    this.image = imageCharacterWeapon;
+    this.spritePositionX = 0;
+    this.spritePositionY = this.sizeYMax * 13; 
   }
 
   attackRight() {
-    console.log("right");
+    this.image = imageCharacterWeapon;
+    this.spritePositionX = 0;
+    this.spritePositionY = this.sizeYMax * 15; 
+  }
+
+  attackAnimation() {
+   this.spritePositionX += this.sizeX -1
+  }
+
+  resetImage() {
+    this.image = imageCharacter;
+    
+    this.attackBegin = 0;
+    this.direction === "left" && this.jumpAutorization ? this.spritePositionY = this.sizeYMax * this.numberOfMovements : this.spritePositionY = this.inicialSpritePositionY;
   }
 }

@@ -5,6 +5,7 @@ function preload() {
   background = loadImage("images/scenery/background.jpg");
   imageBat = loadImage("images/scenery/bath.png");
   imageCharacter = loadImage("images/maincaracter/warior.png");
+  imageCharacterWeapon = loadImage("images/maincaracter/warrior2.png");
   imageBubble = loadImage("images/enemy/gotinha.png");
   imageTroll = loadImage("images/enemy/troll.png");
   imageFlyBubble = loadImage("images/enemy/gotinha-voadora.png");
