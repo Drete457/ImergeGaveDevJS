@@ -47,7 +47,6 @@ class Lvl {
         break;
       case 6:
         bossFight = false;
-        playSoundFinalBoss.stop();
         playSound = false;
         nextLvlScreen = loadImage("images/scenery/weeding.JPG");
         finalScore = parseInt(points.points);
