@@ -2,8 +2,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(40);
   playSound = true;
-  gameSound.loop();
-  gameSound.setVolume(0.1);
+
   new Reset();
 }
 
@@ -20,10 +19,19 @@ function draw() {
 
 function gameRunApp() {
   if (!bossFight) {
+    isPlaying();
     gameRun = true;
     imageKnight.hide();
   } else {
     gameRun = true;
     gameApp = new GameAppBoss();
+  }
+}
+
+function isPlaying() {
+  if (!gameSound.isPlaying()) {
+    playSoundFinalBoss.stop();
+    gameSound.loop();
+    gameSound.setVolume(0.1);
   }
 }

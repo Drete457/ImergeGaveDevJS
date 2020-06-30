@@ -1,6 +1,5 @@
 class Reset {
   constructor() {
-    this.playMusic();
 
     this.lvlAutorization();
 
@@ -47,14 +46,6 @@ class Reset {
     lvl4 = false;
     lvl5 = false;
     bossFight = false;
-  }
-
-  playMusic() {
-    if (!playSound) {
-      playSound = true;
-      playSoundFinalBoss.stop();
-      gameSound.loop();
-    }
   }
 
   callFactory() {
