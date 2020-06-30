@@ -1,6 +1,8 @@
 //Sound
 let gameSound;
 let jumpSound;
+let hitSound;
+let soundAttack;
 let playSound;
 let playSoundFinalBoss;
 

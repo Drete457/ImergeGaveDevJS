@@ -80,14 +80,14 @@ class Character extends AnimationDraw {
     this.spritePositionY === this.inicialSpritePositionY
       ? (this.spritePositionY = this.jumpRight)
       : (this.spritePositionY = this.jumpLeft);
-    
+
     this.numberOfJumps > 0 ? this.jumpSound.play() : null;
 
     if (this.numberOfJumps > 0) {
       this.jumpSpeed = -this.gravity * this.humanStrength;
       this.jumpSound.play();
     }
-     
+
     this.numberOfJumps--;
   }
 
@@ -127,9 +127,22 @@ class Character extends AnimationDraw {
 
   collision(enemy) {
     const precision = 0.7;
+
+    let verification = collideRectRect(
+      this.inicialPositionX + width / 25,
+      this.inicialPositionY,
+      this.characterWidth - width / 15,
+      this.characterHeight * precision,
+      enemy.inicialPositionX + enemy.sizeX / 5,
+      enemy.inicialPositionY + enemy.sizeY / 8,
+      enemy.characterWidth * precision,
+      enemy.characterHeight * precision,
+    );
+
     if (enemy instanceof Bat) {
       return false;
     }
+
     if (enemy instanceof PowerUpPoint) {
       if (
         collideRectRect(
@@ -148,16 +161,10 @@ class Character extends AnimationDraw {
       }
       return false;
     }
-    return collideRectRect(
-      this.inicialPositionX + width / 25,
-      this.inicialPositionY,
-      this.characterWidth - width / 15,
-      this.characterHeight * precision,
-      enemy.inicialPositionX + enemy.sizeX / 5,
-      enemy.inicialPositionY + enemy.sizeY / 8,
-      enemy.characterWidth * precision,
-      enemy.characterHeight * precision,
-    );
+
+    verification && !hitSound.isPlaying() ? hitSound.play() : null;
+
+    return verification;
   }
 
   collisionBoss(enemy) {
@@ -207,6 +214,7 @@ class Character extends AnimationDraw {
     this.direction === "right" && this.jumpAutorization
       ? this.attackRight()
       : null;
+    !soundAttack.isPlaying() && this.jumpAutorization ? soundAttack.play() : null;
   }
 
   attackLeft() {
