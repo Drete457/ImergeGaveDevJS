@@ -3,6 +3,7 @@ function setup() {
   frameRate(40);
   playSound = true;
   gameSound.loop();
+  gameSound.setVolume(0.1);
   new Reset();
 }
 

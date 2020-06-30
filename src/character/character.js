@@ -80,10 +80,14 @@ class Character extends AnimationDraw {
     this.spritePositionY === this.inicialSpritePositionY
       ? (this.spritePositionY = this.jumpRight)
       : (this.spritePositionY = this.jumpLeft);
-    this.jumpSound.play();
-    this.numberOfJumps > 0
-      ? (this.jumpSpeed = -this.gravity * this.humanStrength)
-      : null;
+    
+    this.numberOfJumps > 0 ? this.jumpSound.play() : null;
+
+    if (this.numberOfJumps > 0) {
+      this.jumpSpeed = -this.gravity * this.humanStrength;
+      this.jumpSound.play();
+    }
+     
     this.numberOfJumps--;
   }
 

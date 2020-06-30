@@ -1,5 +1,5 @@
 function preload() {
-  gameSound = loadSound("sound/begin.ogg");
+  gameSound = loadSound("sound/begin.mp3");
   jumpSound = loadSound("sound/somPulo.mp3");
   playSoundFinalBoss = loadSound("sound/finalbossmusic.mp3");
   background = loadImage("images/scenery/background.jpg");
